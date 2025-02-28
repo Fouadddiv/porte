@@ -78,13 +78,14 @@ header{
         border-radius: 50% 50%;
         letter-spacing: 0.12em;
 transition-delay: 0.5s;
-    }/*This code relates to the Focuse of contact page button*/
-      
+    }/*This code relates to the Focuse of contact page button*/      
       section{
         padding: 6.25em 12.5em;
         width: 100%;
        }
        .main{
+        width: 100vw;
+        height: 100vh;
         color: white;
         font-family: 'Courier New', Courier, monospace;
         font-size: 1.20em;
@@ -97,6 +98,7 @@ transition-delay: 0.5s;
        .ttitle{
         display: flex;
         justify-content: center;
+        margin-top: 6.25em;
        }
        .ti{
         width: fit-content;
