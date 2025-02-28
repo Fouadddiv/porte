@@ -84,6 +84,12 @@ transition-delay: 0.5s;
         width: 100%;
        }
        .main{
+        background-image: url(background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
         width: 100vw;
         height: 100vh;
         color: white;
