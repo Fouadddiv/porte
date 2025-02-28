@@ -109,6 +109,7 @@ height: 100vh;
         text-decoration: underline;
        }
        .cont{
+           color: white;
         width: 18.75em;
         display: flex;
         flex-wrap: wrap;
