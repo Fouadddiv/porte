@@ -86,10 +86,8 @@ transition-delay: 0.5s;
        .main{
         width: 100%;
         height: 100vh;
-
         font-family: 'Courier New', Courier, monospace;
         font-size: 1.20em;
-
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -111,16 +109,14 @@ transition-delay: 0.5s;
         width: 18.75em;
         display: flex;
         flex-wrap: wrap;
-
+ letter-spacing: 0.06em;
+        text-transform: capitalize;
+       
 margin-bottom: 3.12em;
        }
        #mpr{
-        width: 20em;
+
         color: white;
-        letter-spacing: 0.06em;
-        text-transform: capitalize;
-        flex-wrap: wrap;
-margin-bottom: 3.12em;
 
        }
 #mb{
