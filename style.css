@@ -1,254 +1,260 @@
-body{
+body {
   background-image: url(background.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
-  max-width: 100vw;
-  min-width: 37.5em;
-  height: auto;
-      width: 100vw;
-      height: 100vh;
+  width: 100vw;
+  min-height: 100vh;
   color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-header{
-    margin-top: 0em;
-      background-color: darkblue;
-      color: rgb(254, 254, 235);
-      width: 100%;
-      position: fixed;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      place-content: center;
-      padding: 0.62em 12.5em;
-   } /*This code is dedicated to header*/
-   .logo{
-      text-transform: uppercase;
-      color: gold;
+header {
+  background-color: darkblue;
+  color: rgb(254, 254, 235);
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 5%;
+  box-sizing: border-box;
+}
+.logo {
+  text-transform: uppercase;
+  color: gold;
   font-weight: 700;
-  font-size: 1.8em;
+  font-size: 1.5em;
   font-family: 'Courier New', Courier, monospace;
-    }/*This code set all parts of Logo, that is, the span and the image*/
-    span{
-      margin-top: 2.5em;
-     }/*This code makes the span go down at the mid -image level*/
-     a{
-      text-decoration: none;
-      text-transform: uppercase;
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 1.8em;
-      font-weight: 500;
-      padding-left: 1.87;
-      }/*This code removes the bottom line under the writing that in the link and enlarges the size of the writing and makes it in the middle ... etc.*/
-      .nvb{
-          background-color: rgb(15, 160, 254);
-          color: rgb(254, 254, 126);
-          width: 4em;
-          height: 3.12em;
-          border-radius: 50% 50%;
-          margin-right: 1.87em;
-          place-items: center;
-       }/*This code concerns the mobility buttons combined*/
-       .mqa{
-          margin-right: 13em;
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-         }/*This code belongs to DIV, which contains navigation buttons*/
-        #hp1:focus{
-          background-color: gold;
-          color: black;
-          width: 4.37em;
-          height: 4.37em;
-          border-radius: 50% 50%;
-          letter-spacing: 0.12em;
+}
+span {
+  margin-top: 1em;
+}
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.2em;
+  font-weight: 500;
+  margin: 0 1em;
+  color: rgb(254, 254, 126);
+}
+.nvb {
+  background-color: rgb(15, 160, 254);
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.5em;
+}
+.mqa {
+  display: flex;
+  flex-wrap: wrap;
+}
+#hp1:focus, #srv1:focus, #pro1:focus, #con01:focus {
+  background-color: gold;
+  color: black;
+  width: 3.5em;
+  height: 3.5em;
+  border-radius: 50%;
+  letter-spacing: 0.1em;
   transition-delay: 0.5s;
-      }/*This code relates to the Focuse of the Home button*/
-      #srv1:focus{
-          background-color: gold;
-          color: black;
-          width: 4.37em;
-          height: 4.37em;
-          border-radius: 50% 50%;
-          letter-spacing: 0.12em;
-  transition-delay: 0.5s;
-      }/*This code relates to the Focuse of Services page button*/
-      #pro1:focus{
-          background-color: gold;
-          color: black;
-          width: 4.37em;
-          height: 4.37em;
-          border-radius: 50% 50%;
-          letter-spacing: 0.12em;
-  transition-delay: 0.5s;
-      }/*This code relates to the Focuse of Project page button*/
-      #con01:focus{
-        background-color: gold;
-        color: black;
-        width: 4.37em;
-        height: 4.37em;
-        border-radius: 50% 50%;
-        letter-spacing: 0.12em;
-transition-delay: 0.5s;
-    }/*This code relates to the Focuse of contact page button*/      
-      section{
-        padding: 6.25em 12.5em;
-        width: 100%;
-       }
-       .main{
-        background-color: transparent;
-        color: white;
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 1.20em;
+}
+section {
+  padding: 5em 5%;
+  width: 100%;
+  box-sizing: border-box;
+}
 
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 12.5em 3.12em;
-       }
-       .ttitle{
-        display: flex;
-        justify-content: center;
-        margin-top: 6.25em;
-       }
-       .ti{
-        width: fit-content;
-        height: fit-content;
-        background-color: rgba(254, 254, 226, 0.75);
-        color: black;
-        text-transform: uppercase;
-        text-decoration: underline;
-       }
-       .cont{
-        width: 18.75em;
-        display: flex;
-        flex-wrap: wrap;
-        letter-spacing: 0.06em;
-        text-transform: capitalize;
-margin-bottom: 3.12em;
-       }
-#mb{
-  width: 6em;
-  height: 4em;
-  border-radius: 15% 15%;
+.main {
+  background-color: transparent;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5em 5%;
+}
+
+.ttitle {
+  display: flex;
+  justify-content: center;
+  margin-top: 3em;
+}
+
+.ti {
+  background-color: rgba(254, 254, 226, 0.75);
+  color: black;
+  text-transform: uppercase;
+  text-decoration: underline;
+  padding: 0.5em;
+}
+
+.cont {
+  max-width: 20em;
+  letter-spacing: 0.05em;
+  text-transform: capitalize;
+  margin-bottom: 2em;
+}
+
+#mb {
+  width: 5em;
+  height: 3em;
+  border-radius: 15%;
   background-color: gray;
   color: black;
   text-transform: uppercase;
-  text-decoration: none;
-  letter-spacing: 0.06em;
-  margin-bottom: 3.12em;
-}
-  #mb:hover{
-    scale: 1.1;
-    background-color: green;
-    color: whitesmoke;
-    text-transform: uppercase;
-    transition-delay: 0.7s;
-  }
-.sm{
-  width: fit-content;
-  min-height: 3.12em;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
-.tsm{
-  width: fit-content;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-bottom: 1.87em;
-}
-.gf{
-  width: fit-content;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-.main2{
-  width: 100%;
-  min-height: 3.12em;
-  background-color: rgba(254, 126, 126, 0.75);
-  display: block;
- place-content: center; 
-}
-.mcj1{
-  height: fit-content;
-  width: fit-content;
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-justify-content: center;
-margin: 6.25em;
-}
-.ico{
-  margin-right: 3.12em;
-  border: solid 0.12em black;
-  background-color: transparent;
-  display: block;
-}
-.web{
-  width: 4em;
-  height: 4em;
-  border-radius: 50% 50%;
-}
-.p-web{
-  width: 18.75em;
-  display: flex;
-  flex-wrap: wrap;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 1.20em;
-  font-weight: 500;
-}
-#pro{
-  width: 100%;
-  background-color: black;
-  color: whitesmoke;
-  font-family: 'Courier New', Courier, monospace;
-  display: block;
-}
-.progect{
-  width: fit-content;
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: auto;
-  margin-right: auto;
-}
-.Cards{
-  width: 21em;
-  background-color: white;
-  color: black;
-  display: block;
-  margin-left: 2em;
-  margin-right: 12em;
-  margin-top: 6.25em;
-}
-.pro{
-  width: 13em;
-  height: 6.25em;
-margin: 1.25em 2.5em;
+  letter-spacing: 0.05em;
+  margin-bottom: 2em;
 }
 
-.mc{
-  width: fit-content;
-  display: block;
-  background-color: transparent;
+#mb:hover {
+  transform: scale(1.1);
+  background-color: green;
+  color: whitesmoke;
+  transition-delay: 0.7s;
 }
-h3{
-  width: fit-content;
+
+.sm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.tsm {
+  text-transform: uppercase;
+ 
+
+letter-spacing: 0.05em;
+  margin-bottom: 1em;
+}
+
+.gf {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main2 {
+  width: 100%;
+  background-color: rgba(254, 126, 126, 0.75);
+  display: flex;
+  justify-content: center;
+}
+
+.mcj1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 3em;
+}
+
+.ico {
+  margin: 1em;
+  border: solid 0.1em black;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.web {
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+}
+
+.p-web {
+  max-width: 20em;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+#pro {
+  width: 100%;
   background-color: black;
   color: whitesmoke;
+  font-family: 'Courier New', Courier, monospace;
 }
-.ti2{
+
+.progect {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.Cards {
+  max-width: 20em;
+  background-color: white;
+  color: black;
+  margin: 2em;
+}
+
+.pro {
+  max-width: 15em;
+  height: 5em;
+  margin: 1em;
+}
+
+.mc {
+  width: 100%;
+}
+
+h3 {
+  background-color: black;
+  color: whitesmoke;
+  padding: 0.5em;
+  text-align: center;
+}
+
+.ti2 {
   background-color: darkblue;
   color: whitesmoke;
-  margin-bottom: 6.25em;
+  margin-bottom: 3em;
 }
-#mi{
+
+#mi {
   width: 100%;
-  height: 6.25em;
+  height: 5em;
   background-color: rgb(100, 100, 230);
 }
 
-#info{
-  margin: 3.12em 15.25em;
+#info {
+  margin: 2em 5%;
 }
+
+@media screen and (max-width: 768px) {
+  header {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .mqa {
+      margin-top: 1em;
+  }
+
+  .nvb {
+      margin: 0.2em;
+  }
+
+  section, .main {
+      padding: 3em 5%;
+  }
+
+  .mcj1, #info {
+      margin: 2em 5%;
+  }
+
+  .Cards {
+      margin: 1em;
+  }
+}
+
+
+
