@@ -9,7 +9,9 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
 }
+
 header {
   background-color: darkblue;
   color: rgb(254, 254, 235);
@@ -22,25 +24,27 @@ header {
   padding: 0.5em 5%;
   box-sizing: border-box;
 }
+
 .logo {
   text-transform: uppercase;
   color: gold;
   font-weight: 700;
   font-size: 1.5em;
-  font-family: 'Courier New', Courier, monospace;
 }
+
 span {
   margin-top: 1em;
 }
+
 a {
   text-decoration: none;
   text-transform: uppercase;
-  font-family: 'Courier New', Courier, monospace;
   font-size: 1.2em;
   font-weight: 500;
   margin: 0 1em;
   color: rgb(254, 254, 126);
 }
+
 .nvb {
   background-color: rgb(15, 160, 254);
   width: 3em;
@@ -51,10 +55,12 @@ a {
   align-items: center;
   margin: 0 0.5em;
 }
+
 .mqa {
   display: flex;
   flex-wrap: wrap;
 }
+
 #hp1:focus, #srv1:focus, #pro1:focus, #con01:focus {
   background-color: gold;
   color: black;
@@ -64,6 +70,7 @@ a {
   letter-spacing: 0.1em;
   transition-delay: 0.5s;
 }
+
 section {
   padding: 5em 5%;
   width: 100%;
@@ -73,7 +80,6 @@ section {
 .main {
   background-color: transparent;
   color: white;
-  font-family: 'Courier New', Courier, monospace;
   font-size: 1em;
   display: flex;
   flex-direction: column;
@@ -128,27 +134,47 @@ section {
 
 .tsm {
   text-transform: uppercase;
- 
-
-letter-spacing: 0.05em;
+  letter-spacing: 0.05em;
   margin-bottom: 1em;
 }
 
-.gf {
+.sim {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
+  gap: 1em;
+  justify-content: center;
+}
+.sotio{
+  max-width: f;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.midia {
+  width: 1.25em;
+  height: 1.25em;
+  border-radius: 50%;
+  background-color: transparent;
 }
 
 .main2 {
   width: 100%;
-  background-color: rgba(254, 126, 126, 0.75);
+  background-color: rgba(254, 250, 126, 0.80);
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
-
+.ti2 {
+  background-color: darkblue;
+  color: whitesmoke;
+  margin-bottom: 3em;
+}
 .mcj1 {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 1em;
   justify-content: center;
   margin: 3em;
 }
@@ -160,6 +186,7 @@ letter-spacing: 0.05em;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .web {
@@ -169,56 +196,45 @@ letter-spacing: 0.05em;
 }
 
 .p-web {
+  background-color: black;
+  color: whitesmoke;
   max-width: 20em;
-  font-family: 'Courier New', Courier, monospace;
   font-size: 1em;
   font-weight: 500;
+  text-align: center;
 }
-
 #pro {
   width: 100%;
   background-color: black;
   color: whitesmoke;
-  font-family: 'Courier New', Courier, monospace;
 }
-
 .progect {
   width: 100%;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
 }
-
 .Cards {
   max-width: 20em;
   background-color: white;
   color: black;
   margin: 2em;
 }
-
 .pro {
-  max-width: 15em;
-  height: 5em;
-  margin: 1em;
+  max-width: 17em;
+  height: 7em;
+  margin: 1em 3.5em;
 }
-
 .mc {
   width: 100%;
 }
-
 h3 {
   background-color: black;
   color: whitesmoke;
   padding: 0.5em;
   text-align: center;
 }
-
-.ti2 {
-  background-color: darkblue;
-  color: whitesmoke;
-  margin-bottom: 3em;
-}
-
 #mi {
   width: 100%;
   height: 5em;
@@ -229,32 +245,29 @@ h3 {
   margin: 2em 5%;
 }
 
+/* Responsive Design */
 @media screen and (max-width: 768px) {
   header {
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
+      padding: 1em;
+  }
+
+  .logo {
+      font-size: 1.2em;
   }
 
   .mqa {
       margin-top: 1em;
+      justify-content: center;
   }
 
   .nvb {
       margin: 0.2em;
+      width: 2.5em;
+      height: 2.5em;
   }
 
   section, .main {
-      padding: 3em 5%;
-  }
-
-  .mcj1, #info {
-      margin: 2em 5%;
-  }
-
-  .Cards {
-      margin: 1em;
-  }
-}
-
-
-
+      padding: 2em 5%.
+  
