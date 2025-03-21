@@ -1,3 +1,4 @@
+/* تنسيق عام للصفحة */
 body {
   background-image: url(background.jpg);
   background-size: cover;
@@ -12,12 +13,16 @@ body {
   font-family: 'Courier New', Courier, monospace;
 }
 
+/* تنسيق header */
 header {
   background-color: darkblue;
   color: rgb(254, 254, 235);
   width: 100%;
+  top: 0;
+  left: 0;
+  margin: 0px;
   position: fixed;
-  z-index: 100;
+  z-index: 999;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -25,6 +30,7 @@ header {
   box-sizing: border-box;
 }
 
+/* تنسيق العناصر داخل header */
 .logo {
   text-transform: uppercase;
   color: gold;
@@ -71,6 +77,7 @@ a {
   transition-delay: 0.5s;
 }
 
+/* تنسيق الأقسام الرئيسية */
 section {
   padding: 5em 5%;
   width: 100%;
@@ -145,12 +152,14 @@ section {
   gap: 1em;
   justify-content: center;
 }
-.sotio{
-  max-width: f;
+
+.sotio {
+  max-width: fit-content;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 }
+
 .midia {
   width: 1.25em;
   height: 1.25em;
@@ -166,11 +175,13 @@ section {
   justify-content: center;
   align-items: center;
 }
+
 .ti2 {
   background-color: darkblue;
   color: whitesmoke;
   margin-bottom: 3em;
 }
+
 .mcj1 {
   display: flex;
   flex-direction: row;
@@ -203,11 +214,13 @@ section {
   font-weight: 500;
   text-align: center;
 }
+
 #pro {
   width: 100%;
   background-color: black;
   color: whitesmoke;
 }
+
 .progect {
   width: 100%;
   display: flex;
@@ -215,59 +228,166 @@ section {
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .Cards {
   max-width: 20em;
   background-color: white;
   color: black;
   margin: 2em;
+  overflow: hidden;
+}
+.Cards >.p-web{
+display: flex;
+flex-direction: column;
+justify-content: space-between;
 }
 .pro {
-  max-width: 17em;
-  height: 7em;
-  margin: 1em 3.5em;
+  max-width:100%;
+  height: auto;
+  margin: 0%;
 }
-.mc {
-  width: 100%;
+.con12{
+  justify-self: center;
+  text-transform: uppercase;
 }
-h3 {
-  background-color: black;
-  color: whitesmoke;
-  padding: 0.5em;
+.b12{
+  background-color: darkblue;
+  color: white;
+  display: flex;
+ justify-self: center;
+ border: none;
+ border-radius: 15em;
+ text-transform: uppercase; }
+ .b12:hover{
+  background-color: gold;
+  color: #000;
+  scale: 1.1;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 17em;
+  transition-delay: 7s;
+ }
+  /* توسيط عنوان القسم */
+.ti2 {
   text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: darkblue;
+  color: white;
+  padding: 0.5em;
+  margin-bottom: 1.5em;
+  width: fit-content;
+  border-radius: 5px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
-#mi {
+
+/* تنسيق عناصر الاتصال */
+#con {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3em 5%;
+  background-color: rgba(254, 250, 126, 0.80);
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2em;
+  flex-wrap: wrap;
   width: 100%;
-  height: 5em;
-  background-color: rgb(100, 100, 230);
 }
 
-#info {
-  margin: 2em 5%;
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  background-color: white;
+  color: black;
+  padding: 1em;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-  header {
-      flex-direction: column;
-      align-items: center;
-      padding: 1em;
+.contact-item:hover {
+  transform: scale(1.05);
+}
+
+.contact-icon {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+}
+footer{
+  background-color: darkblue;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  place-content: center;
+}
+/* إخفاء زر القائمة الجانبية في الشاشات الكبيرة */
+@media (min-width: 769px) {
+  #menu-btn {
+    display: none !important;
   }
 
-  .logo {
-      font-size: 1.2em;
+  #sidebar {
+    display: none !important;
   }
-
-  .mqa {
-      margin-top: 1em;
-      justify-content: center;
+  header{
+    display: flex;
   }
-
-  .nvb {
-      margin: 0.2em;
-      width: 2.5em;
-      height: 2.5em;
+}
+/*اخفاء header من الشاشات الصغيرة*/
+@media (max-width: 768px) {
+  #menu-btn {
+    display: flexbox!important;
+    z-index: 300;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
   }
-
-  section, .main {
-      padding: 2em 5%.
-  
+#bnvm{
+  width: 100%;
+  height: 100%;
+}
+  #sidebar {
+    display: flex!important;
+    flex-direction: column;
+    background-color: darkblue;
+    width: 50vw;
+    height: 100vh;
+    margin-left: -100%;
+    position: fixed;
+  }
+  #s1{
+    margin: 1em 3.12em;
+  }
+  .ti{
+    margin: 3em 0em;
+  }
+  .nvb{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-self: center;
+    margin: 1em;
+  }
+  .nvb:focus{
+    background-color: gold;
+    color: black;
+    border-radius: 50%;
+    scale: 1.1;
+    transition-delay: 5s;
+  }
+  header{
+    display: none;
+  }
+}
