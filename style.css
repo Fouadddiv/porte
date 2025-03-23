@@ -391,3 +391,137 @@ footer{
     display: none;
   }
 }
+/*تحسين مظهر الموقع على الشاشات الصغيرة*/
+@media (max-width: 425px) {
+  #menu-btn {
+    display: flex !important;
+    z-index: 300;
+    background-color: #000;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  #bnvm {
+    width: 100%;
+    height: 100%;
+  }
+
+  #sidebar {
+    display: flex !important;
+    flex-direction: column;
+    background-color: darkblue;
+    width: 60vw;
+    height: 100vh;
+    margin-left: -100%;
+    position: fixed;
+    transition: all 0.3s ease-in-out;
+  }
+
+  #s1 {
+    margin: 1em 2em;
+  }
+
+  .ti {
+    margin: 2em 0;
+  }
+
+  .nvb {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1em;
+    padding: 0.5em;
+    border-radius: 5px;
+  }
+
+  .nvb:focus {
+    background-color: gold;
+    color: black;
+    border-radius: 50%;
+    scale: 1.1;
+    transition: all 0.3s ease-in-out;
+  }
+
+  header {
+    display: none;
+  }
+
+  /* تحسين تخطيط الأقسام */
+  section {
+    padding: 2.5em 5%;
+    text-align: center;
+  }
+
+  .ttitle {
+    margin-top: 1em;
+  }
+
+  .ti, .ti2 {
+    font-size: 1.3em;
+    padding: 0.3em;
+  }
+
+  .cont {
+    font-size: 1.1em;
+    max-width: 95%;
+  }
+
+  /* ضبط الأزرار */
+  #mb {
+    width: 100%;
+    max-width: 9em;
+    height: 2.8em;
+    font-size: 0.9em;
+    border-radius: 5px;
+  }
+
+  /* ضبط الصور */
+  .midia, .web {
+    width: 2.3em;
+    height: 2.3em;
+  }
+
+  /* تحسين ترتيب الخدمات */
+  .mcj1 {
+    flex-direction: row;
+    gap: 1.5em;
+    align-items: center;
+  }
+
+  .ico {
+    width: 85%;
+    padding: 0.8em;
+  }
+
+  /* ضبط المشاريع */
+  .progect {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Cards {
+    width: 90%;
+    max-width: 20em;
+    margin: 1em auto;
+    padding: 1em;
+    border-radius: 10px;
+  }
+
+  /* تحسين عرض جهات الاتصال */
+  .contact-container {
+    flex-direction: column;
+    gap: 0.8em;
+    align-items: center;
+  }
+
+  .contact-item {
+    width: 90%;
+    max-width: 18em;
+    padding: 0.7em;
+    border-radius: 5px;
+  }
+}
