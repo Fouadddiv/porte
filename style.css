@@ -487,7 +487,7 @@ footer{
 
   /* تحسين ترتيب الخدمات */
   .mcj1 {
-    flex-direction: row;
+    flex-direction: column;
     gap: 1.5em;
     align-items: center;
   }
@@ -495,6 +495,7 @@ footer{
   .ico {
     width: 85%;
     padding: 0.8em;
+    box-shadow: 10px 10px 5px 2px darkblue inset;
   }
 
   /* ضبط المشاريع */
