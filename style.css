@@ -390,6 +390,86 @@ footer{
   header{
     display: none;
   }
+  /* تحسين تخطيط الأقسام */
+  section {
+    padding: 2.5em 5%;
+    text-align: center;
+  }
+
+  .ttitle {
+    margin-top: 1em;
+  }
+
+  .ti, .ti2 {
+    font-size: 1.3em;
+    padding: 0.3em;
+  }
+
+  .cont {
+    font-size: 1.1em;
+    max-width: 95%;
+  }
+
+  /* ضبط الأزرار */
+  #mb {
+    width: 100%;
+    max-width: 9em;
+    height: 2.8em;
+    font-size: 0.9em;
+    border-radius: 5px;
+  }
+/* تحسين قسم الميديا*/
+.sim{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+  /* ضبط الصور */
+  .midia, .web {
+    width: 2.3em;
+    height: 2.3em;
+  }
+
+  /* تحسين ترتيب الخدمات */
+  .mcj1 {
+    flex-direction: column;
+    gap: 1.5em;
+    align-items: center;
+  }
+
+  .ico {
+    width: 85%;
+    padding: 0.8em;
+    box-shadow: 10px 10px 5px 2px darkblue inset;
+  }
+
+  /* ضبط المشاريع */
+  .progect {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Cards {
+    width: 90%;
+    max-width: 20em;
+    margin: 1em auto;
+    padding: 1em;
+    border-radius: 10px;
+  }
+
+  /* تحسين عرض جهات الاتصال */
+  .contact-container {
+    flex-direction: column;
+    gap: 0.8em;
+    align-items: center;
+  }
+
+  .contact-item {
+    width: 90%;
+    max-width: 18em;
+    padding: 0.7em;
+    border-radius: 5px;
+  }
 }
 /*تحسين مظهر الموقع على الشاشات الصغيرة*/
 @media (max-width: 425px) {
@@ -478,7 +558,12 @@ footer{
     font-size: 0.9em;
     border-radius: 5px;
   }
-
+/* تحسين قسم الميديا*/
+.sim{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
   /* ضبط الصور */
   .midia, .web {
     width: 2.3em;
