@@ -51,8 +51,8 @@ span {
   }
 }
 
-.logo {
-  animation: spin 4s linear infinite;
+#logo {
+  animation: spin 6s linear infinite;
 }
 a {
   text-decoration: none;
@@ -118,6 +118,7 @@ section {
   text-transform: uppercase;
   text-decoration: underline;
   padding: 0.5em;
+  margin-top: 2em;
 }
 
 .cont {
