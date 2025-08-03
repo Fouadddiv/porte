@@ -41,7 +41,19 @@ header {
 span {
   margin-top: 1em;
 }
+/*اضافة حركة الى الشعار*/
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 
+.logo {
+  animation: spin 4s linear infinite;
+}
 a {
   text-decoration: none;
   text-transform: uppercase;
@@ -383,6 +395,9 @@ footer{
   }
   .ti{
     margin: 3em 0em;
+  }
+  #logo{
+    margin-left: 1.5em;
   }
     .nvb{
 width: 4.5em;
