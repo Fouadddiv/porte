@@ -21,6 +21,7 @@ header {
   top: 0;
   left: 0;
   margin: 0px;
+  padding-bottom: 2em;
   position: fixed;
   z-index: 999;
   display: flex;
@@ -56,21 +57,23 @@ span {
 }
 a {
   text-decoration: none;
-  text-transform: uppercase;
-  font-size: 1.2em;
-  font-weight: 500;
-  margin: 0 1em;
+  margin: 0.5em 1em;
   color: rgb(254, 254, 126);
 }
 
 .nvb {
-  background-color: rgb(15, 160, 254);
-  width: 3em;
+  background-color: rgb(15, 160, 180);
+  color: #fff;
+  width: 5em;
   height: 3em;
-  border-radius: 50%;
+  border-radius: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
   margin: 0 0.5em;
 }
 
@@ -80,10 +83,11 @@ a {
 }
 
 #hp1:focus, #srv1:focus, #pro1:focus, #con01:focus {
-  background-color: gold;
-  color: black;
+  background-color: transparent;
+  color: gold;
   width: 3.5em;
   height: 3.5em;
+  border: solid 0.5em gold;
   border-radius: 50%;
   letter-spacing: 0.1em;
   transition-delay: 0.5s;
@@ -118,7 +122,7 @@ section {
   text-transform: uppercase;
   text-decoration: underline;
   padding: 0.5em;
-  margin-top: 2em;
+  margin-top: 3em;
 }
 
 .cont {
@@ -131,24 +135,30 @@ section {
 }
 
 #mb {
-  width: 5em;
-  height: 3em;
+  width: fit-content;
+  height: 4em;
   display: flex;
   flex-grow: 1.5;
   border: solid 0.2em transparent;
   border-radius: 15%;
-  background-color: gray;
-  color: black;
+  background-color: rgba(70, 70, 70, 0.76);
+  color: #fff;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 2em;
+
+  padding-right: 1em;
 }
 
 #mb:hover {
   transform: scale(1.1);
   background-color: transparent;
   color: whitesmoke;
-  border: solid 0.2em gold;
+  display: flex;
+  border: solid 0.5em gold;
+  padding-right: 1em;
+  align-items: center;
+  justify-content: center;
   transition-delay: 0.7s;
 }
 
