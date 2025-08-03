@@ -62,7 +62,7 @@ a {
 }
 
 .nvb {
-  background-color: rgb(15, 160, 180);
+  background-color: rgba(15, 160, 180, 0.50);
   color: #fff;
   width: 5em;
   height: 3em;
@@ -136,7 +136,7 @@ section {
 
 #mb {
   width: fit-content;
-  height: 4em;
+  height: 5em;
   display: flex;
   flex-grow: 1.5;
   border: solid 0.2em transparent;
