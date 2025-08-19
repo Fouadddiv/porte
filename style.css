@@ -559,7 +559,7 @@ height: 4em;
   .ti {
     margin: 2em 0;
   }
-#sidebar>div {
+.mqa {
   display: grid;
   grid-template-columns: repeat(1, 1fr); /* عمود واحد */
   gap: 1rem; /* مسافة بين الأزرار */
