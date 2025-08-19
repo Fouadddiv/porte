@@ -454,11 +454,13 @@ height: 4em;
 
   /* ضبط الأزرار */
   #mb {
-    width: 100%;
+    background-color: rgba(90, 90, 90, 0.75);
+    width: fit-content;
     max-width: 9em;
-    height: 2.8em;
+    height: 3em;
     font-size: 0.9em;
-    border-radius: 5px;
+    font-weight: bold;
+    border-radius: 10%;
     margin-left: 1em;
   }
   #mb:focus{
@@ -549,7 +551,7 @@ height: 4em;
     position: fixed;
     transition: all 0.3s ease-in-out;
   }
-
+  
   #s1 {
     margin: 1em 2em;
   }
@@ -557,17 +559,23 @@ height: 4em;
   .ti {
     margin: 2em 0;
   }
+#sidebar>div {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* عمود واحد */
+  gap: 1rem; /* مسافة بين الأزرار */
+  margin-top: 1.5rem; /* مسافة من النصوص فوق */
+}
 
     .nvb {
-      width: 5em;
+      width: 4em;
       height: 3.5em;
       border-radius: 10%;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    
     justify-content: center;
-    margin: 1em;
-    padding: 0.5em;
+    margin-bottom: 1em;
+    padding: 0.3em;
     border-radius: 5px;
   }
 

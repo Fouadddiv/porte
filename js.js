@@ -35,9 +35,14 @@ return document.getElementById("ti3").innerHTML="Learn all our projects"
     const servicesButton = document.getElementById("srv12").cloneNode(true);
     const projectsButton = document.getElementById("pro12").cloneNode(true);
     const contactsButton = document.getElementById("con13").cloneNode(true);
+    // نسخ الديف التي تحتوي على الأزرار (mqa) وإضافتها للقائمة الجانبية
+const buttonsContainer = document.querySelector(".mqa").cloneNode(true
+);
 
-    // إضافة النسخ إلى القائمة الجانبية
-    sidebar.append(welcomeText1, logoImage, welcomeText2, homeButton, servicesButton, projectsButton, contactsButton);
+// الآن أضف العناصر إلى القائمة الجانبية
+sidebar.append(welcomeText1, logoImage, welcomeText2, buttonsContainer);
+
+ 
 
     // فتح وإغلاق القائمة عند الضغط على الزر
     menuBtn.addEventListener("click", function () {
