@@ -48,14 +48,14 @@ sidebar.append(welcomeText1, logoImage, welcomeText2, buttonsContainer);
     menuBtn.addEventListener("click", function () {
       sidebar.style.marginLeft = "0%";
         sidebar.style.marginRight = "0%";
-        menuBtn.textContent = "Close Navigation Menu";
+        // menuBtn.textContent = "Close";
     });
 
     // إغلاق القائمة عند النقر خارجها
     document.addEventListener("click", function (event) {
         if (!sidebar.contains(event.target) && event.target !== menuBtn) {
             sidebar.style.marginLeft = "-100%"; // إغلاق القائمة
-            menuBtn.textContent = "Navigation Menu";
+            // menuBtn.textContent = "Open";
         }
     });
 });
