@@ -545,7 +545,7 @@ height: 4em;
     display: flex !important;
     flex-direction: column;
     background-color: darkblue;
-    width: 60vw;
+    width: 70vw;
     height: 100vh;
     margin-left: -100%;
     position: fixed;
@@ -559,26 +559,16 @@ height: 4em;
   .ti {
     margin: 2em 0;
   }
-.mqa {
+.mqa{
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(1, 1fr); /* عمود واحد */
-  gap: 1rem; /* مسافة بين الأزرار */
-  margin-top: 1.5rem; /* مسافة من النصوص فوق */
+  grid-template-columns: repeat(2,1fr);
+  gap: 2.5px;
 }
-
-    .nvb {
-      width: 4em;
-      height: 3.5em;
-      border-radius: 10%;
-    display: flex;
-    flex-direction: row;
-    
-    justify-content: center;
-    margin-bottom: 1em;
-    padding: 0.3em;
-    border-radius: 5px;
-  }
-
+.nvb{
+  width: 3.5em;
+  height: 2.5em;
+  padding-right: 3em;
   .nvb:focus {
     background-color: gold;
     color: black;
