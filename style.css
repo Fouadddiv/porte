@@ -566,9 +566,10 @@ height: 4em;
   gap: 2.5px;
 }
 .nvb{
-  width: 3.5em;
-  height: 2.5em;
+  width: 4.5em;
+  height: 4em;
   padding-right: 3em;
+}
   .nvb:focus {
     background-color: gold;
     color: black;
@@ -661,5 +662,4 @@ height: 4em;
     max-width: 18em;
     padding: 0.7em;
     border-radius: 5px;
-  }
-}
+  }}
