@@ -61,36 +61,60 @@ a {
   color: rgb(254, 254, 126);
 }
 
+/* 1. ضبط حاوية القائمة لإزالة النقاط وضبط المحاذاة */
+header nav ul.mqa {
+  list-style: none; /* إزالة النقاط السوداء بجانب العناصر */
+  padding: 0;
+  margin: 0;
+  display: flex; /* عرض العناصر بجانب بعضها */
+  align-items: center; /* توسيط عمودي */
+  gap: 10px; /* مسافة بين كل زر والآخر */
+}
+
+/* 2. ضبط العناصر داخل القائمة */
+header nav li {
+  margin: 0; /* إزالة الهوامش الزائدة */
+  gap: 30px;
+}
+
+/* 3. تنسيق الزر العام .nvb */
 .nvb {
   background-color: rgba(15, 160, 180, 0.50);
   color: #fff;
-  width: 5em;
+  width: 6em; /* زيادة العرض قليلاً ليتناسب مع الكلمات */
   height: 3em;
-  border-radius: 10%;
+  border: 2px solid transparent; /* حدود شفافة لمنع اهتزاز التصميم عند التحويم */
+  border-radius: 10px; /* جعل الحواف ناعمة */
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.1em;
+  font-size: 1em;
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
-  margin: 0 0.5em;
+  letter-spacing: 0.1em;
+  cursor: pointer; /* تغيير شكل المؤشر ليد */
+  transition: all 0.4s ease; /* تنعيم الحركة */
+  outline: none; /* إزالة الإطار الافتراضي عند الضغط */
 }
 
-.mqa {
-  display: flex;
-  flex-wrap: wrap;
+/* 4. تأثير عند مرور الماوس (Hover) */
+.nvb:hover {
+  background-color: gold; /* تغيير اللون للذهبي */
+  color: black; /* النص يصبح أسود */
+  border-color: gold;
+  transform: translateY(-3px); /* رفع الزر قليلاً للأعلى */
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4); /* إضافة ظل خفيف */
 }
 
+/* 5. تأثير الزر النشط (Active/Focus) كما طلبت في الكود الأصلي لكن بشكل محسن */
 #hp1:focus, #srv1:focus, #pro1:focus, #con01:focus {
   background-color: transparent;
   color: gold;
-  width: 3.5em;
-  height: 3.5em;
-  border: solid 0.5em gold;
-  border-radius: 50%;
-  letter-spacing: 0.1em;
-  transition-delay: 0.5s;
+  border: 2px solid gold; /* تقليل سمك الحدود ليكون أنيقاً */
+  border-radius: 50%; /* التحول لدائرة */
+  width: 4em; /* تصغير العرض عند التحول لدائرة */
+  height: 4em;
+  transform: scale(1.1); /* تكبير بسيط */
 }
 
 /* تنسيق الأقسام الرئيسية */
@@ -392,41 +416,95 @@ footer{
   width: 100%;
   height: 100%;
 }
-  #sidebar {
-    display: flex!important;
-    flex-direction: column;
-    background-color: darkblue;
-    width: 50vw;
-    height: 100vh;
-    margin-left: -100%;
-    position: fixed;
-  }
-  #s1{
-    margin: 1em 3.12em;
-  }
-  .ti{
-    margin: 3em 0em;
-  }
-  #logo{
-    margin-left: 1.5em;
-  }
-    .nvb{
-width: 4.5em;
-height: 4em;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-self: center;
-    border-radius: 10%;
-    margin: 1em;
-  }
-  .nvb:focus{
-    background-color: gold;
-    color: black;
-    border-radius: 50%;
-    scale: 1.1;
-    transition-delay: 5s;
-  }
+ /* --- تعديلات القائمة الجانبية لتصحيح ظهور الأزرار --- */
+
+@media (max-width: 768px) {
+
+    #sidebar {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start; /* يبدأ الترتيب من الأعلى */
+        
+        background-color: darkblue; /* نفس لون الـ Header */
+        width: 70vw;
+        height: 100vh; /* ملء ارتفاع الشاشة */
+        
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 200;
+        
+        /* أهم تعديل: السماح بالتمرير إذا كان المحتوى طويلاً */
+        overflow-y: auto; 
+        padding-top: 1em; /* مسافة بسيطة من الأعلى */
+        padding-bottom: 3em; /* مسافة من الأسفل لضمان ظهور آخر زر */
+        gap: 1em; /* تقليل المسافة بين العناصر */
+        
+        margin-left: -100%;
+        transition: margin-left 0.4s ease-in-out;
+    }
+
+    /* تصغير الشعار داخل القائمة لتوفير مساحة للأزرار */
+    #sidebar #logo {
+        width: 4em !important; /* تصغير الحجم */
+        height: 4em !important;
+        margin-top: 1em;
+        border: 2px solid gold;
+    }
+
+    /* تصغير النصوص الترحيبية */
+    #sidebar span {
+        font-size: 0.9em; /* تصغير الخط قليلاً */
+        margin: 0.5em 0; /* تقليل الهوامش */
+        text-align: center;
+        width: 90%;
+    }
+
+    /* ضبط حاوية الأزرار لتظهر تحت بعضها */
+    #sidebar nav.mqa {
+        width: 100%;
+        display: block; /* لضمان عدم حدوث مشاكل في الترتيب */
+        margin-top: 1em;
+    }
+
+    /* ضبط القائمة الداخلية للأزرار */
+    #sidebar nav.mqa ul {
+        display: flex;
+        flex-direction: column; /* ترتيب عمودي إجباري */
+        align-items: center;
+        gap: 15px; /* مسافة معقولة بين الأزرار */
+        padding: 0;
+        width: 100%;
+        list-style: none;
+    }
+
+    /* ضبط كل زر */
+    #sidebar nav.mqa ul li {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* تنسيق شكل الزر */
+    #sidebar .nvb {
+        width: 90%; /* عرض مناسب */
+        height: 3em;
+        font-size: 1em;
+        margin: 0; /* إزالة الهوامش الجانبية القديمة */
+        background-color: rgba(255, 255, 255, 0.60);
+        color: #000;
+        border: 1px solid gold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+#sidebar .nvb :hover, #sidebar .nvb :focus, #sidebar .nvb :active{
+  background-color: gold;
+  color: #000;
+  transition-delay: 6s;
+}
   header{
     display: none;
   }
@@ -526,14 +604,15 @@ height: 4em;
 /*تحسين مظهر الموقع على الشاشات الصغيرة*/
 @media (max-width: 425px) {
   #menu-btn {
+    width: 4em;
+    height: 4em;
     display: flex !important;
     z-index: 300;
-    background-color: #000;
     position: fixed;
     top: 10px;
     left: 10px;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 50% 50%;
   }
 
   #bnvm {
@@ -541,42 +620,92 @@ height: 4em;
     height: 100%;
   }
 
-  #sidebar {
-    display: flex !important;
-    flex-direction: column;
-    background-color: darkblue;
-    width: 70vw;
-    height: 100vh;
-    margin-left: -100%;
-    position: fixed;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  #s1 {
-    margin: 1em 2em;
-  }
+ #sidebar {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start; /* يبدأ الترتيب من الأعلى */
+        
+        background-color: darkblue; /* نفس لون الـ Header */
+        width: 70vw;
+        height: 100vh; /* ملء ارتفاع الشاشة */
+        
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 200;
+        
+        /* أهم تعديل: السماح بالتمرير إذا كان المحتوى طويلاً */
+        overflow-y: auto; 
+        padding-top: 1em; /* مسافة بسيطة من الأعلى */
+        padding-bottom: 3em; /* مسافة من الأسفل لضمان ظهور آخر زر */
+        gap: 1em; /* تقليل المسافة بين العناصر */
+        
+        margin-left: -100%;
+        transition: margin-left 0.4s ease-in-out;
+    }
 
-  .ti {
-    margin: 2em 0;
-  }
-.mqa{
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 2.5px;
+    /* تصغير الشعار داخل القائمة لتوفير مساحة للأزرار */
+    #sidebar #logo {
+        width: 4em !important; /* تصغير الحجم */
+        height: 4em !important;
+        margin-top: 1em;
+        border: 2px solid gold;
+    }
+
+    /* تصغير النصوص الترحيبية */
+    #sidebar span {
+        font-size: 0.9em; /* تصغير الخط قليلاً */
+        margin: 0.5em 0; /* تقليل الهوامش */
+        text-align: center;
+        width: 90%;
+    }
+
+    /* ضبط حاوية الأزرار لتظهر تحت بعضها */
+    #sidebar nav.mqa {
+        width: 100%;
+        display: block; /* لضمان عدم حدوث مشاكل في الترتيب */
+        margin-top: 1em;
+    }
+
+    /* ضبط القائمة الداخلية للأزرار */
+    #sidebar nav.mqa ul {
+        display: flex;
+        flex-direction: column; /* ترتيب عمودي إجباري */
+        align-items: center;
+        gap: 15px; /* مسافة معقولة بين الأزرار */
+        padding: 0;
+        width: 100%;
+        list-style: none;
+    }
+
+    /* ضبط كل زر */
+    #sidebar nav.mqa ul li {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* تنسيق شكل الزر */
+    #sidebar .nvb {
+        width: 90%; /* عرض مناسب */
+        height: 3em;
+        font-size: 1em;
+        margin: 0; /* إزالة الهوامش الجانبية القديمة */
+        background-color: rgba(255, 255, 255, 0.60);
+        color: #000;
+        border: 1px solid gold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-wrap: wrap;
+    }
 }
-.nvb{
-  width: 4.5em;
-  height: 4em;
-  padding-right: 3em;
-}
-  .nvb:focus {
-    background-color: gold;
-    color: black;
-    border-radius: 50%;
-    scale: 1.1;
-    transition: all 0.3s ease-in-out;
-  }
+#sidebar .nvb :hover, #sidebar .nvb :focus, #sidebar .nvb :active{
+  background-color: gold;
+  color: #000;
+  transition-delay: 6s;
+} 
 
   header {
     display: none;
