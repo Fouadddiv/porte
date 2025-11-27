@@ -41,6 +41,7 @@ header {
 
 span {
   margin-top: 1em;
+  text-wrap: wrap;
 }
 /*اضافة حركة الى الشعار*/
 @keyframes spin {
@@ -79,11 +80,11 @@ header nav li {
 
 /* 3. تنسيق الزر العام .nvb */
 .nvb {
-  background-color: rgba(15, 160, 180, 0.50);
+  background-color: transparent;
   color: #fff;
   width: 6em; /* زيادة العرض قليلاً ليتناسب مع الكلمات */
   height: 3em;
-  border: 2px solid transparent; /* حدود شفافة لمنع اهتزاز التصميم عند التحويم */
+  border: 2px solid gold; /* حدود ذهبية لمنع اهتزاز التصميم عند التحويم */
   border-radius: 10px; /* جعل الحواف ناعمة */
   display: flex;
   justify-content: center;
@@ -225,9 +226,9 @@ section {
   scale: 1.1;
   
 }
-.main2 {
+.main2, #con  {
   width: 100%;
-  background-color: rgba(254, 250, 126, 0.80);
+  background-color: rgba(170, 170, 170);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -240,18 +241,18 @@ section {
   margin-bottom: 3em;
 }
 
-.mcj1 {
-  display: flex;
-  flex-direction: row;
+#mcj {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1em;
   justify-content: center;
-  margin: 3em;
+  
 }
 
 .ico {
   margin: 1em;
-  border: solid 0.1em black;
-  background-color: transparent;
+  border: solid 0.7em black;
+  background-color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -259,18 +260,23 @@ section {
 }
 
 .web {
-  width: 3em;
-  height: 3em;
+  width: 5em !important;
+  height: 5em !important;
+  object-fit: contain; /* يضمن ظهور الصورة كاملة بوضوح */
   border-radius: 50%;
+  margin-top: 1em;
 }
 
 .p-web {
   background-color: black;
-  color: whitesmoke;
+  color: #fff;
   max-width: 20em;
   font-size: 1em;
-  font-weight: 500;
+  font-weight: bold;
   text-align: center;
+  padding: 1.5em;
+  line-height: 1.6;
+  margin-left: 1em;
 }
 
 #pro {
@@ -279,12 +285,12 @@ section {
   color: whitesmoke;
 }
 
-.progect {
+#progect {
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
+  gap: 20px;
 }
 
 .Cards {
@@ -293,6 +299,11 @@ section {
   color: black;
   margin: 2em;
   overflow: hidden;
+}
+.Cards:hover{
+  background-color: black;
+  color: white;
+  border: solid 0.5em gold;
 }
 .Cards >.p-web{
 display: flex;
@@ -346,41 +357,44 @@ justify-content: space-between;
 #con {
   display: flex;
   flex-direction: column;
+  z-index: 100;
   align-items: center;
   justify-content: center;
   padding: 3em 5%;
-  background-color: rgba(254, 250, 126, 0.80);
+  
 }
 
-.contact-container {
-  display: flex;
-  flex-direction: row;
+#mcj1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   justify-content: center;
   gap: 2em;
   flex-wrap: wrap;
   width: 100%;
 }
-
-.contact-item {
+#tic{
   display: flex;
+  flex-direction: column;
+  justify-self: center;
+}
+/*تنسيق العنوان الأسغر */
+#ti04{
+  width: 12em;
+  background-color: rgb(0, 0, 0);
+  color: #fff;
+  text-wrap: wrap;
+  border: solid 0.5em red;
+  padding: 1.5em;
+}
+/*تنسيق حاوية الصور والعناوين */
+.mc{
+  width: fit-content;
+  background-color: #000;
   align-items: center;
-  gap: 0.5em;
-  background-color: white;
-  color: black;
+  display: flex;
+  flex-direction: column;
+  border: solid 0.7em red;
   padding: 1em;
-  border-radius: 10px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.contact-item:hover {
-  transform: scale(1.05);
-}
-
-.contact-icon {
-  width: 2em;
-  height: 2em;
-  border-radius: 50%;
 }
 footer{
   background-color: darkblue;
@@ -394,20 +408,18 @@ footer{
   #menu-btn {
     display: none !important;
   }
-
   #sidebar {
     display: none !important;
   }
   header{
-    display: flex;
+    display: flex !important;
   }
 }
 /*اخفاء header من الشاشات الصغيرة*/
 @media (max-width: 768px) {
   #menu-btn {
     display: flexbox!important;
-    z-index: 300;
-    background-color: #000;
+    z-index: 1000 !important;
     position: fixed;
     top: 0;
     left: 0;
@@ -492,15 +504,15 @@ footer{
         height: 3em;
         font-size: 1em;
         margin: 0; /* إزالة الهوامش الجانبية القديمة */
-        background-color: rgba(255, 255, 255, 0.60);
-        color: #000;
+        background-color: rgba(255, 255, 255, 0.15);
+        color: #fff;
         border: 1px solid gold;
         display: flex;
         align-items: center;
         justify-content: center;
     }
 }
-#sidebar .nvb :hover, #sidebar .nvb :focus, #sidebar .nvb :active{
+ #sidebar .nvb :focus {
   background-color: gold;
   color: #000;
   transition-delay: 6s;
@@ -561,7 +573,8 @@ footer{
   }
 
   /* تحسين ترتيب الخدمات */
-  .mcj1 {
+  #mcj {
+    display: flex;
     flex-direction: column;
     gap: 1.5em;
     align-items: center;
@@ -574,7 +587,8 @@ footer{
   }
 
   /* ضبط المشاريع */
-  .progect {
+  #progect {
+    display: flex;
     flex-direction: column;
     align-items: center;
   }
@@ -586,15 +600,25 @@ footer{
     padding: 1em;
     border-radius: 10px;
   }
-
+/*اضافة التركيز للبطاقات*/
+.Cards 
+:hover{
+  background-color: #000;
+  color: #fff;
+  border: solid 0.5em gold;
+}
   /* تحسين عرض جهات الاتصال */
-  .contact-container {
+  #mcj1 {
+    width: 80%;
+    display: flex;
     flex-direction: column;
-    gap: 0.8em;
+    gap: 1em;
     align-items: center;
   }
 
-  .contact-item {
+  .mc{
+    justify-self: center;
+    margin-right: 1.5em;
     width: 90%;
     max-width: 18em;
     padding: 0.7em;
@@ -692,8 +716,8 @@ footer{
         height: 3em;
         font-size: 1em;
         margin: 0; /* إزالة الهوامش الجانبية القديمة */
-        background-color: rgba(255, 255, 255, 0.60);
-        color: #000;
+        background-color: rgba(255, 255, 255, 0.15);
+        color: #fff;
         border: 1px solid gold;
         display: flex;
         align-items: center;
@@ -701,7 +725,7 @@ footer{
         text-wrap: wrap;
     }
 }
-#sidebar .nvb :hover, #sidebar .nvb :focus, #sidebar .nvb :active{
+ #sidebar .nvb :focus {
   background-color: gold;
   color: #000;
   transition-delay: 6s;
@@ -754,6 +778,7 @@ footer{
 
   /* تحسين ترتيب الخدمات */
   .mcj1 {
+    display: flex;
     flex-direction: column;
     gap: 1.5em;
     align-items: center;
@@ -767,6 +792,7 @@ footer{
 
   /* ضبط المشاريع */
   .progect {
+    display: flex;
     flex-direction: column;
     align-items: center;
   }
@@ -784,6 +810,7 @@ footer{
     flex-direction: column;
     gap: 0.8em;
     align-items: center;
+    justify-content: center;
   }
 
   .contact-item {
@@ -791,4 +818,4 @@ footer{
     max-width: 18em;
     padding: 0.7em;
     border-radius: 5px;
-  }}
+  }
