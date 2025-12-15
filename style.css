@@ -270,6 +270,7 @@ section {
 .p-web {
   background-color: black;
   color: #fff;
+  
   max-width: 20em;
   font-size: 1em;
   font-weight: bold;
@@ -277,6 +278,7 @@ section {
   padding: 1.5em;
   line-height: 1.6;
   margin-left: 1em;
+  margin-right: 1em;
 }
 
 #pro {
