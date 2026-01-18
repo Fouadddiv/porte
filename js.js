@@ -31,63 +31,70 @@ function ree(){
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. العثور على حاوية الأزرار الأصلية وشريط التنقل السفلي
+      // 1. كود النسخ (كما هو)
     const navMobile = document.getElementById("navMobile");
     const buttonsContainer = document.getElementById("hnv").cloneNode(true);
 
-    // 2. إضافة الأزرار المنسوخة (بكامل كلاساتها ومعرفاتها) إلى شريط التنقل السفلي
     if (navMobile && buttonsContainer) {
         navMobile.appendChild(buttonsContainer);
     }
-    //اضافة نظام التبويبات
-    const HomeButoon =document.getElementById("hp1")
-    const servicesButoon =document.getElementById("srv1")
-    const projectsButoon =document.getElementById("pro1")
-    const contacteButoon =document.getElementById("con01")
-  //كتابة الدوال الأربعة
-  HomeButoon.addEventListener("click", function(){
-    document.getElementById("hp").style.display="flex";
-    document.getElementById("srv").style.display="none";
-    document.getElementById("pro").style.display="none";
-    document.getElementById("con").style.display="none";
-HomeButoon.classList.add("button-active")
-servicesButoon.classList.remove("button-active")
-projectsButoon.classList.remove("button-active")
-contacteButoon.classList.remove("button-active")
-  });
-    servicesButoon.addEventListener("click", function(){
-      document.getElementById("srv").style.display="flex";
-      document.getElementById("hp").style.display="none";
-    document.getElementById("pro").style.display="none";
-    document.getElementById("con").style.display="none";
-    //اضافة الكلاس لزر الخدمات وحذفه من باقي الأزرار
-    servicesButoon.classList.add("button-active");
-    HomeButoon.classList.remove("button-active");
-    projectsButoon.classList.remove("button-active");
-    contacteButoon.classList.remove("button-active");
+
+    // 2. تفعيل نظام التبويبات (التعديل هنا ليعمل في الجهتين)
+    
+    // دالة لتنظيف الكلاسات من جميع الأزرار (علوية وسفلية)
+    function clearActive() {
+        document.querySelectorAll(".nvb").forEach(btn => btn.classList.remove("button-active"));
+    }
+
+    // --- زر الصفحة الرئيسية ---
+    document.querySelectorAll("#hp1").forEach(btn => {
+        btn.addEventListener("click", function() {
+            document.getElementById("hp").style.display = "flex";
+            document.getElementById("srv").style.display = "none";
+            document.getElementById("pro").style.display = "none";
+            document.getElementById("con").style.display = "none";
+            
+            clearActive(); // تنظيف الكل
+            document.querySelectorAll("#hp1").forEach(b => b.classList.add("button-active")); // تفعيل الزرين معاً
+        });
     });
-    //زر المشاريع:
-    projectsButoon.addEventListener("click", function(){
-      document.getElementById("srv").style.display="none";
-      document.getElementById("hp").style.display="none";
-    document.getElementById("pro").style.display="flex";
-    document.getElementById("con").style.display="none";
-    //اضافة الكلاس لزر المشاريع وازالته من باقي الأزرار
-    projectsButoon.classList.add("button-active");
-    HomeButoon.classList.remove("button-active");
-    servicesButoon.classList.remove("button-active");
-    contacteButoon.classList.remove("button-active");
+
+    // --- زر الخدمات ---
+    document.querySelectorAll("#srv1").forEach(btn => {
+        btn.addEventListener("click", function() {
+            document.getElementById("srv").style.display = "flex";
+            document.getElementById("hp").style.display = "none";
+            document.getElementById("pro").style.display = "none";
+            document.getElementById("con").style.display = "none";
+            
+            clearActive();
+            document.querySelectorAll("#srv1").forEach(b => b.classList.add("button-active"));
+        });
     });
-    contacteButoon.addEventListener("click", function(){
-      //زر الاتصال
-      document.getElementById("srv").style.display="none";
-      document.getElementById("hp").style.display="none";
-    document.getElementById("pro").style.display="none";
-    document.getElementById("con").style.display="flex";
-    //اضافة الكلاس لزر الاتصال وحذفه من باقي الأزرار
-    contacteButoon.classList.add("button-active");
-    HomeButoon.classList.remove("button-active");
-    servicesButoon.classList.remove("button-active");
-    projectsButoon.classList.remove("button-active");
-    })
-})
+
+    // --- زر المشاريع ---
+    document.querySelectorAll("#pro1").forEach(btn => {
+        btn.addEventListener("click", function() {
+            document.getElementById("pro").style.display = "flex";
+            document.getElementById("hp").style.display = "none";
+            document.getElementById("srv").style.display = "none";
+            document.getElementById("con").style.display = "none";
+            
+            clearActive();
+            document.querySelectorAll("#pro1").forEach(b => b.classList.add("button-active"));
+        });
+    });
+
+    // --- زر الاتصال ---
+    document.querySelectorAll("#con01").forEach(btn => {
+        btn.addEventListener("click", function() {
+            document.getElementById("con").style.display = "flex";
+            document.getElementById("hp").style.display = "none";
+            document.getElementById("srv").style.display = "none";
+            document.getElementById("pro").style.display = "none";
+            
+            clearActive();
+            document.querySelectorAll("#con01").forEach(b => b.classList.add("button-active"));
+        });
+    });
+});
