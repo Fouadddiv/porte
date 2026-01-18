@@ -4,58 +4,90 @@ function spi(){
     const utterance = new SpeechSynthesisUtterance(heading.textContent);
     speechSynthesis.speak(utterance);
   });
-  }
-  function change(){
-    return document.getElementById("t1").innerHTML="Learn about the developer"
-  }
-  function Return(){
-    return document.getElementById("t1").innerHTML="HOME PAGE"
-  }
-  function replacing(){
-    return document.getElementById("ti2").innerHTML = "Learn about our services"
-  }
-  function ThePrevious(){
-    return document.getElementById("ti2").innerHTML="services"
-  }
-  function changing(){
-return document.getElementById("ti3").innerHTML="Learn all our projects"
-  }
-  function ree(){
-    return document.getElementById("ti3").innerHTML="Projects"
-  }
-  document.addEventListener("DOMContentLoaded", () => {
-    const menuBtn = document.getElementById("menu-btn");
-    const sidebar = document.getElementById("sidebar");
+}
 
-    // نسخ عناصر الهيدر بدلاً من نقلها
-    const welcomeText1 = document.getElementById("s1").cloneNode(true);
-    const logoImage = document.getElementById("logo").cloneNode(true);
-    const welcomeText2 = document.getElementById("s2").cloneNode(true);
-    const homeButton = document.getElementById("hp12").cloneNode(true);
-    const servicesButton = document.getElementById("srv12").cloneNode(true);
-    const projectsButton = document.getElementById("pro12").cloneNode(true);
-    const contactsButton = document.getElementById("con13").cloneNode(true);
-    // نسخ الديف التي تحتوي على الأزرار (mqa) وإضافتها للقائمة الجانبية
-const buttonsContainer = document.querySelector(".mqa").cloneNode(true
-);
+function change(){
+  return document.getElementById("t1").innerHTML="Learn about the developer"
+}
 
-// الآن أضف العناصر إلى القائمة الجانبية
-sidebar.append(welcomeText1, logoImage, welcomeText2, buttonsContainer);
+function Return(){
+  return document.getElementById("t1").innerHTML="HOME PAGE"
+}
 
- 
+function replacing(){
+  return document.getElementById("ti2").innerHTML = "Learn about our services"
+}
 
-    // فتح وإغلاق القائمة عند الضغط على الزر
-    menuBtn.addEventListener("click", function () {
-      sidebar.style.marginLeft = "0%";
-        sidebar.style.marginRight = "0%";
-        // menuBtn.textContent = "Close";
+function ThePrevious(){
+  return document.getElementById("ti2").innerHTML="services"
+}
+
+function changing(){
+  return document.getElementById("ti3").innerHTML="Learn all our projects"
+}
+
+function ree(){
+  return document.getElementById("ti3").innerHTML="Projects"
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    // 1. العثور على حاوية الأزرار الأصلية وشريط التنقل السفلي
+    const navMobile = document.getElementById("navMobile");
+    const buttonsContainer = document.getElementById("hnv").cloneNode(true);
+
+    // 2. إضافة الأزرار المنسوخة (بكامل كلاساتها ومعرفاتها) إلى شريط التنقل السفلي
+    if (navMobile && buttonsContainer) {
+        navMobile.appendChild(buttonsContainer);
+    }
+    //اضافة نظام التبويبات
+    const HomeButoon =document.getElementById("hp1")
+    const servicesButoon =document.getElementById("srv1")
+    const projectsButoon =document.getElementById("pro1")
+    const contacteButoon =document.getElementById("con01")
+  //كتابة الدوال الأربعة
+  HomeButoon.addEventListener("click", function(){
+    document.getElementById("hp").style.display="flex";
+    document.getElementById("srv").style.display="none";
+    document.getElementById("pro").style.display="none";
+    document.getElementById("con").style.display="none";
+HomeButoon.classList.add("button-active")
+servicesButoon.classList.remove("button-active")
+projectsButoon.classList.remove("button-active")
+contacteButoon.classList.remove("button-active")
+  });
+    servicesButoon.addEventListener("click", function(){
+      document.getElementById("srv").style.display="flex";
+      document.getElementById("hp").style.display="none";
+    document.getElementById("pro").style.display="none";
+    document.getElementById("con").style.display="none";
+    //اضافة الكلاس لزر الخدمات وحذفه من باقي الأزرار
+    servicesButoon.classList.add("button-active");
+    HomeButoon.classList.remove("button-active");
+    projectsButoon.classList.remove("button-active");
+    contacteButoon.classList.remove("button-active");
     });
-
-    // إغلاق القائمة عند النقر خارجها
-    document.addEventListener("click", function (event) {
-        if (!sidebar.contains(event.target) && event.target !== menuBtn) {
-            sidebar.style.marginLeft = "-100%"; // إغلاق القائمة
-            // menuBtn.textContent = "Open";
-        }
+    //زر المشاريع:
+    projectsButoon.addEventListener("click", function(){
+      document.getElementById("srv").style.display="none";
+      document.getElementById("hp").style.display="none";
+    document.getElementById("pro").style.display="flex";
+    document.getElementById("con").style.display="none";
+    //اضافة الكلاس لزر المشاريع وازالته من باقي الأزرار
+    projectsButoon.classList.add("button-active");
+    HomeButoon.classList.remove("button-active");
+    servicesButoon.classList.remove("button-active");
+    contacteButoon.classList.remove("button-active");
     });
-});
+    contacteButoon.addEventListener("click", function(){
+      //زر الاتصال
+      document.getElementById("srv").style.display="none";
+      document.getElementById("hp").style.display="none";
+    document.getElementById("pro").style.display="none";
+    document.getElementById("con").style.display="flex";
+    //اضافة الكلاس لزر الاتصال وحذفه من باقي الأزرار
+    contacteButoon.classList.add("button-active");
+    HomeButoon.classList.remove("button-active");
+    servicesButoon.classList.remove("button-active");
+    projectsButoon.classList.remove("button-active");
+    })
+})
