@@ -444,7 +444,8 @@ footer{
         display: flex !important;
         flex-direction: row;
         align-items: center;
-        justify-content: space-between; /* يبدأ الترتيب من الأعلى */
+        justify-content: center; /* يبدأ الترتيب من الأعلى */
+        align-items: center;
         
         background-color: darkblue; /* نفس لون الـ Header */
         width: 100vw;
@@ -456,7 +457,7 @@ footer{
         right: 0;
         z-index: 200;
         
-        padding-top: 1em; /* مسافة بسيطة من الأعلى */
+        padding-top: 3em; /* مسافة بسيطة من الأعلى */
         padding-bottom: 3em; /* مسافة من الأسفل لضمان ظهور آخر زر */
         gap: 1em; /* تقليل المسافة بين العناصر */
 /*ضبط شريط التنقل */        
@@ -603,22 +604,28 @@ footer{
         left: 0;
         right: 0;
         z-index: 200;
-        
+ 
         padding-top: 1em; /* مسافة بسيطة من الأعلى */
         padding-bottom: 3em; /* مسافة من الأسفل لضمان ظهور آخر زر */
+        padding-right: 4em;
         gap: 1em; /* تقليل المسافة بين العناصر */
     }
     /*ضبط شريط التنقل */        
         .mqa{
-          width: 100%;
+          width: 100vw;
           height: 100%;
-          display: flex;
-          flex-direction: row;
-          justify-content: space-around;
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+gap: 30px;
+          ;
+          margin-top: 2em;
           margin-bottom: 3.5em;
+          padding-right: 2em;
           list-style: none;
           padding-bottom: 1em;
+        
         }
+        
         #logo12{
   display: flex;
   flex-direction: row;
