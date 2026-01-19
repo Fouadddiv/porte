@@ -94,7 +94,18 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("pro").style.display = "none";
             
             clearActive();
-            document.querySelectorAll("#con01").forEach(b => b.classList.add("button-active"));
+            document.querySelectorAll("#con01").forEach(b => b.classList.add("button-active"));          
+        });
+        //تفعيل زر المشاريع في قسم الصفحة الرئيسية
+        const mb = document.getElementById("mb")
+        mb.addEventListener("click", function(){
+                      document.getElementById("pro").style.display = "flex";
+            document.getElementById("hp").style.display = "none";
+            document.getElementById("srv").style.display = "none";
+            document.getElementById("con").style.display = "none";
+            //اضافة خاصية الزر المفعل اليه
+clearActive();
+            document.querySelectorAll("#pro1").forEach(b => b.classList.add("button-active"));            
         });
     });
 });
