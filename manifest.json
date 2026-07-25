@@ -1,0 +1,58 @@
+{
+  "name": "Fouad Boukhtouta - Portfolio",
+  "short_name": "Fouad Portfolio",
+  "id": "/",
+  "description": "Personal portfolio of Fouad Boukhtouta - Web Developer & Frontend Engineer",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#000080",
+  "theme_color": "#000080",
+  "orientation": "any",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["portfolio", "technology", "business"],
+  "icons": [
+    {
+      "src": "icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Fouad Portfolio Home"
+    },
+    {
+      "src": "icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Fouad Portfolio Mobile"
+    }
+  ],
+  "prefer_related_applications": false
+}

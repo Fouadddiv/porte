@@ -1,0 +1,743 @@
+/* تنسيق عام للصفحة */
+body {
+  background-image: url(background.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: right;
+  width: 100vw;
+  min-height: 100vh;
+  color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* تنسيق header */
+header {
+  background-color: darkblue;
+  color: rgb(254, 254, 235);
+  width: 100%;
+  top: 0;
+  left: 0;
+  margin: 0px;
+  padding-bottom: 2em;
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 5%;
+  box-sizing: border-box;
+}
+
+/* تنسيق العناصر داخل header */
+.logo {
+  text-transform: uppercase;
+  color: gold;
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+span {
+  margin-top: 1em;
+  text-wrap: wrap;
+}
+/*اضافة حركة الى الشعار*/
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#logo {
+  animation: spin 6s linear infinite;
+}
+a {
+  text-decoration: none;
+  margin: 0.5em 1em;
+  color: rgb(254, 254, 126);
+}
+
+/* 1. ضبط حاوية القائمة لإزالة النقاط وضبط المحاذاة */
+header nav ul.mqa {
+  list-style: none; /* إزالة النقاط السوداء بجانب العناصر */
+  padding: 0;
+  margin: 0;
+  display: flex; /* عرض العناصر بجانب بعضها */
+  align-items: center; /* توسيط عمودي */
+  gap: 10px; /* مسافة بين كل زر والآخر */
+}
+
+/* 2. ضبط العناصر داخل القائمة */
+header nav li {
+  margin: 0; /* إزالة الهوامش الزائدة */
+  gap: 30px;
+}
+
+/* 3. تنسيق الزر العام .nvb */
+.nvb {
+  background-color: transparent;
+  color: #fff;
+  width: 4em; /* زيادة العرض قليلاً ليتناسب مع الكلمات */
+  height: 4em;
+  border: 2px solid gold; /* حدود ذهبية لمنع اهتزاز التصميم عند التحويم */
+  border-radius: 10px; /* جعل الحواف ناعمة */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer; /* تغيير شكل المؤشر ليد */
+  transition: all 0.4s ease; /* تنعيم الحركة */
+  outline: none; /* إزالة الإطار الافتراضي عند الضغط */
+}
+
+/* 4. تأثير عند مرور الماوس (Hover) */
+.nvb:hover {
+cursor: pointer;
+  color: black; /* النص يصبح أسود */
+  border-color: gold;
+  transform: translateY(-3px); /* رفع الزر قليلاً للأعلى */
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4); /* إضافة ظل خفيف */
+}
+/*ضبط الصور داخل الأزرار*/
+.bimg{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 20px;
+  padding: 1px;
+}
+.bimg:focus{
+  width: 90%;
+  height: 90%;
+  
+  object-fit: cover;
+}
+/* 5. تأثير الزر النشط (Active/Focus) كما طلبت في الكود الأصلي لكن بشكل محسن */
+#hp1:focus, #srv1:focus, #pro1:focus, #con01:focus{
+  background-color: transparent;
+  color: gold;
+  border: 2px solid gold; /* تقليل سمك الحدود ليكون أنيقاً */
+  
+  width: 4em; /* تصغير العرض عند التحول لدائرة */
+  height: 4em;
+  transform: scale(1.1); /* تكبير بسيط */
+}
+
+/* تنسيق الأقسام الرئيسية */
+section {
+  padding: 5em 5%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.main {
+  background-color: transparent;
+  color: white;
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5em 5%;
+}
+
+.ttitle {
+  display: flex;
+  justify-content: center;
+  margin-top: 3em;
+}
+
+.ti {
+  background-color: rgba(254, 254, 226, 0.75);
+  color: black;
+  text-transform: uppercase;
+  text-decoration: underline;
+  padding: 0.5em;
+  margin-top: 3em;
+}
+
+.cont {
+  max-width: 12em;
+  letter-spacing: 0.05em;
+  line-height: 1.3;
+  text-transform: uppercase;
+  text-align: justify;
+  margin-bottom: 2em;
+}
+
+#mb {
+  width: fit-content;
+  height: 5em;
+  display: flex;
+  flex-grow: 1.5;
+  border: solid 0.2em transparent;
+  border-radius: 15%;
+  background-color: rgba(70, 70, 70, 0.76);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 2em;
+
+  padding-right: 1em;
+}
+
+#mb:hover {
+  transform: scale(1.1);
+  background-color: transparent;
+  color: whitesmoke;
+  display: flex;
+  border: solid 0.5em gold;
+  padding-right: 1em;
+  align-items: center;
+  justify-content: center;
+  transition-delay: 0.7s;
+}
+
+.sm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.tsm {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1em;
+}
+
+.sim {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 1em;
+  justify-content: center;
+}
+
+.sotio {
+  max-width: fit-content;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.midia {
+  width: 3.12em;
+  height: 3.12em;
+  border-radius: 50%;
+  background-color: transparent;
+  
+}
+.midia:hover{
+  animation: midia-spin 2s linear;
+  scale: 1.1;
+  
+}
+.main2, #con  {
+  width: 100%;
+  background-color: rgba(170, 170, 170);
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ti2 {
+  background-color: darkblue;
+  color: whitesmoke;
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+#mcj {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+  justify-content: center;
+  
+}
+
+.ico {
+  margin: 1em;
+  border: solid 0.7em black;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.web {
+  width: 5em !important;
+  height: 5em !important;
+  object-fit: contain; /* يضمن ظهور الصورة كاملة بوضوح */
+  border-radius: 50%;
+  margin-top: 1em;
+}
+
+.p-web {
+  background-color: black;
+  color: #fff;
+  
+  max-width: 20em;
+  font-size: 1em;
+  font-weight: bold;
+  text-align: center;
+  padding: 1.5em;
+  line-height: 1.6;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+#pro {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  background-color: black;
+  color: whitesmoke;
+}
+
+#progect {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  gap: 20px;
+}
+
+.Cards {
+  max-width: 20em;
+  background-color: white;
+  color: black;
+  margin: 2em;
+  overflow: hidden;
+}
+.Cards:hover{
+  background-color: black;
+  color: white;
+  border: solid 0.5em gold;
+}
+.Cards >.p-web{
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+.pro {
+  max-width:100%;
+  height: auto;
+  margin: 0%;
+}
+.con12{
+  justify-self: center;
+  text-transform: uppercase;
+}
+.b12{
+  background-color: darkblue;
+  color: white;
+  display: flex;
+ justify-self: center;
+ border: none;
+ border-radius: 15em;
+ text-transform: uppercase; }
+ .b12:hover{
+  background-color: gold;
+  color: #000;
+  scale: 1.1;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 17em;
+  transition-delay: 7s;
+ }
+  /* توسيط عنوان القسم */
+.ti2 {
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: darkblue;
+  color: white;
+  padding: 0.5em;
+  margin-bottom: 1.5em;
+  width: fit-content;
+  border-radius: 5px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* تنسيق عناصر الاتصال */
+#con {
+  display: none;
+  flex-direction: column;
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+  padding: 3em 5%;
+  
+}
+
+#mcj1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  gap: 2em;
+  flex-wrap: wrap;
+  width: 100%;
+}
+#tic{
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+}
+/*تنسيق العنوان الأسغر */
+#ti04{
+  width: 12em;
+  background-color: rgb(0, 0, 0);
+  color: #fff;
+  text-wrap: wrap;
+  border: solid 0.5em red;
+  padding: 1.5em;
+}
+/*تنسيق حاوية الصور والعناوين */
+.mc{
+  width: fit-content;
+  background-color: #000;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  border: solid 0.7em red;
+  padding: 1em;
+}
+footer{
+  background-color: darkblue;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  place-content: center;
+}
+/* إخفاء زر القائمة الجانبية في الشاشات الكبيرة */
+@media (min-width: 769px) {
+  #navMobile{
+    display: none !important;
+  }
+  #logo12{
+    display: none;
+  }
+  header{
+    display: flex !important;
+  }
+}
+/*اخفاء header من الشاشات الصغيرة*/
+
+  
+ 
+
+@media (max-width: 768px) {
+
+    #navMobile{
+        display: flex !important;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center; /* يبدأ الترتيب من الأعلى */
+        align-items: center;
+        
+        background-color: darkblue; /* نفس لون الـ Header */
+        width: 100vw;
+        height: 5vh; /* ملء ارتفاع الشاشة */
+        
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 200;
+        
+        padding-top: 3em; /* مسافة بسيطة من الأعلى */
+        padding-bottom: 3em; /* مسافة من الأسفل لضمان ظهور آخر زر */
+        gap: 1em; /* تقليل المسافة بين العناصر */
+/*ضبط شريط التنقل */        
+        .mqa{
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          margin-bottom: 3.5em;
+          list-style: none;
+          padding-bottom: 1em;
+        }
+        
+    }
+#logo12{
+  display: flex;
+  flex-direction: row;
+  justify-self: center;
+  align-self: center;
+}
+  header{
+    display: none;
+  }
+  /* تحسين تخطيط الأقسام */
+  section {
+    padding: 2.5em 5%;
+    text-align: center;
+  }
+
+  .ttitle {
+    margin-top: 1em;
+  }
+
+  .ti, .ti2 {
+    font-size: 1.3em;
+    padding: 0.3em;
+  }
+
+  .cont {
+    font-size: 1.1em;
+    max-width: 70%;
+    line-height: 1.3;
+    text-align: justify;
+  }
+
+  /* ضبط الأزرار */
+  #mb {
+    background-color: rgba(90, 90, 90, 0.75);
+    width: fit-content;
+    max-width: 9em;
+    height: 3em;
+    font-size: 0.9em;
+    font-weight: bold;
+    border-radius: 10%;
+    margin-left: 1em;
+  }
+  #mb:focus{
+    background-color: transparent;
+    color: whitesmoke;
+    border: solid 0.2em gold;
+    transform: scale(1.5);
+    transition-delay: 0.7s;
+  }
+/* تحسين قسم الميديا*/
+.sim{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+  /* ضبط الصور */
+  .midia, .web {
+    width: 2.3em;
+    height: 2.3em;
+  }
+
+  /* تحسين ترتيب الخدمات */
+  #mcj {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    align-items: center;
+  }
+
+  .ico {
+    width: 85%;
+    padding: 0.8em;
+    box-shadow: 10px 10px 5px 2px darkblue inset;
+  }
+
+  /* ضبط المشاريع */
+  #progect {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Cards {
+    width: 90%;
+    max-width: 20em;
+    margin: 1em auto;
+    padding: 1em;
+    border-radius: 10px;
+  }
+/*اضافة التركيز للبطاقات*/
+.Cards 
+:hover{
+  background-color: #000;
+  color: #fff;
+  border: solid 0.5em gold;
+}
+  /* تحسين عرض جهات الاتصال */
+  #mcj1 {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+  }
+
+  .mc{
+    justify-self: center;
+    margin-right: 1.5em;
+    width: 90%;
+    max-width: 18em;
+    padding: 0.7em;
+    border-radius: 5px;
+  }
+}
+/*تحسين مظهر الموقع على الشاشات الصغيرة*/
+@media (max-width: 425px) {
+  #navMobile{
+        display: flex !important;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between; /* يبدأ الترتيب من الأعلى */
+        
+        background-color: darkblue; /* نفس لون الـ Header */
+        width: 100vw;
+        height: 15vh; /* ملء ارتفاع الشاشة */
+        
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 200;
+ 
+        padding-top: 1em; /* مسافة بسيطة من الأعلى */
+        padding-bottom: 3em; /* مسافة من الأسفل لضمان ظهور آخر زر */
+        padding-right: 4em;
+        gap: 1em; /* تقليل المسافة بين العناصر */
+    }
+    /*ضبط شريط التنقل */        
+        .mqa{
+          width: 100vw;
+          height: 100%;
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+gap: 30px;
+          ;
+          margin-top: 2em;
+          margin-bottom: 3.5em;
+          padding-right: 2em;
+          list-style: none;
+          padding-bottom: 1em;
+        
+        }
+        
+        #logo12{
+  display: flex;
+  flex-direction: row;
+  justify-self: center;
+  align-self: center;
+}
+  header {
+    display: none;
+  }
+
+  /* تحسين تخطيط الأقسام */
+  section {
+    padding: 2.5em 5%;
+    z-index: 100 !important;
+    text-align: center;
+  }
+
+  .ttitle {
+    margin-top: 1em;
+  }
+
+  .ti, .ti2 {
+    font-size: 1.3em;
+    padding: 0.3em;
+  }
+
+  .cont {
+    font-size: 1.1em;
+    max-width: 95%;
+    text-align: justify;
+  }
+
+  /* ضبط الأزرار */
+  #mb {
+    width: 100%;
+    max-width: 9em;
+    height: 2.8em;
+    font-size: 0.9em;
+    border-radius: 5px;
+  }
+/* تحسين قسم الميديا*/
+.sim{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+  /* ضبط الصور */
+  .midia, .web {
+    width: 2.3em;
+    height: 2.3em;
+  }
+
+  /* تحسين ترتيب الخدمات */
+  .mcj1 {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    align-items: center;
+  }
+
+  .ico {
+    width: 85%;
+    padding: 0.8em;
+    box-shadow: 10px 10px 5px 2px darkblue inset;
+  }
+
+  /* ضبط المشاريع */
+  .progect {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Cards {
+    width: 90%;
+    max-width: 20em;
+    margin: 1em auto;
+    padding: 1em;
+    border-radius: 10px;
+  }
+
+  /* تحسين عرض جهات الاتصال */
+  #tic{
+    display: flex;
+    flex-direction: column !important;
+    width: 100%;
+    z-index: 100 !important;
+  }
+  #ti04{
+    width: 50%;
+    align-self: center;
+    margin-left: 0.5em;
+  }
+  #mcj1{
+    flex-direction: column;
+    z-index: 100 !important;
+    gap: 0.8em;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .contact-item {
+    width: 90%;
+    max-width: 18em;
+    padding: 0.7em;
+    border-radius: 5px;
+  }
+}
+.button-active{
+    background-color: gold; /* تغيير اللون للذهبي */
+  color: black; /* النص يصبح أسود */
+  border-color: gold;
+  transform: translateY(-3px); /* رفع الزر قليلاً للأعلى */
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4); /* إضافة ظل خفيف */
+}

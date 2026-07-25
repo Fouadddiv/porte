@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hello, I'm Fouad — a dedicated Web Developer.
+I specialize in crafting clean, responsive, and accessible front-end interfaces for various types of websites.
+In addition to my technical path, I hold a Master’s degree in Penal Law and Criminal Sciences, which strengthens my analytical thinking and problem-solving approach in development">
+<meta name="keywords" content="Fouad, Frontend,  crafting clean, responsive, accessible front-end, HTML, CSS, JavaScript, Web Developer, Frontend Developer, Portfolio, فؤاد, تطوير واجهات أمامية, تطوير تطبيقات الويب, صيانة الواجهات الأمامية">
+
+    <title>
+        fouad.com
+    </title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000080">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Fouad Portfolio">
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="js.js" defer></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js', { scope: './' })
+                    .then(reg => {
+                        console.log('SW registered:', reg.scope);
+                        reg.addEventListener('updatefound', () => {
+                            console.log('SW update found');
+                        });
+                    })
+                    .catch(err => console.log('SW registration failed:', err));
+            });
+        }
+    </script>
+</head>
+<body>
+<div id="logo12">
+<span class="logo" id="s1">Welcome <br> to my </span>
+        <img src="logo.jpg" class="logo" id="logo" style="border-radius: 50% 50%; width: 5em; height: 5em;">
+        <span class="logo" id="s2">information <br> portfolio</span>
+</div>
+    <header>
+        
+        <span class="logo" id="s1">Welcome <br> to my </span>
+        <img src="logo.jpg" class="logo" id="logo" style="border-radius: 50% 50%; width: 5em; height: 5em;">
+        <span class="logo" id="s2">information <br> portfolio</span>
+        <nav class="mqa" id="hnv">
+            <ul class="mqa">
+                <li>
+                <button class="nvb" id="hp1">
+<img src="hom.jpg" alt="HOME" class="bimg"> 
+                </button>
+            </li>
+            <li>
+                                <button class="nvb" id="srv1">
+<img src="service.jpg" alt="Services" class="bimg">
+                </button>
+            </li>
+            <li>
+<button class="nvb" id="pro1">
+<img src="project.jpg" alt="Projects" class="bimg">
+</button>
+            </li>
+
+            <li>
+                <button class="nvb" id="con01">
+         <img src="contact.jpg" alt="CONTACT" class="bimg">
+            </button>
+            </li>
+            </ul>
+        </nav>
+    </header>
+    <section id="hp" class="main">
+        <div class="ttitle">
+            <h1 id="t1" class="ti" onclick="spi()" onmouseover="change()" onmouseout="Return()">Home page</h1>
+        </div>
+        <div class="cont">
+            <p class="cont">
+                Hello, I am Fouad, <br><span> a web developer</span> in terms of Front End:I build the fronts of
+                different sites <br>,<span> and i hav a master’s certificate in the specialization of the Penal law and
+                    Criminal Sciences</span>
+            </p>
+        <div class="qats">
+            
+                <input type="button" 
+                value="go to Projects" 
+                id="mb"> 
+            <div class="sm">
+                <h2 class="tsm">social media</h2>
+                <div class="sim">
+                <div class="sotio">
+                <a href="https://www.facebook.com/share/19zfwnDzce/" target="_blank">
+                    <img src="Facebook.jpg" alt="Facebook" id="fb" class="midia"/></a>
+                        <Label for="Facebook">FACEBOOK</Label>
+                         </div>
+                         <div class="sotio">
+                            <a href="https://www.instagram.com/boukhtoutafouade?igsh=bzQ1aG85dmRrZmJ5" target="_blank">
+                                <img src="instagram.jpg" alt="instagram" class="midia">
+                            </a>
+                            <label for="instagram">instagram</label>
+                         </div>
+                        <div class="sotio">
+                <a href="https://github.com/Fouadddiv" target="_blank">
+                    <img src="Github.jpg" alt="Github" id="gh" class="midia"/>
+                </a>
+                <label for="Github">GITHUB</label>
+                </div>
+                <div class="sotio">
+                <a href="https://discord.com/invite/uYJWjNww" target="_blank">
+                    <img src="discord.jpg" alt="discord" id="fb" class="midia"/></a>
+                        <Label for="discord">DISCORD</Label>
+                         </div>
+                
+            </div></div>
+        </div>
+        </div>
+    </section>
+    <section id="srv" class="main2">
+        <div class="ttitle">
+<h1 id="ti2" class="ti2" onclick="spi()" onmouseover="replacing()" onmouseout="ThePrevious()">Services</h1></div>
+<div id="mcj" class="mcj1">
+<div class="ico">
+<img src="html.jpg" alt="HTML Service" class="web"/>
+<p class="p-web">
+    HTML Service:
+We build and fix website structures by writing clean HTML code and correcting structural errors based on the client’s needs.
+</p>
+</div>
+<div class="ico">
+    <img src="css.jpg" alt="CSS Service" class="web"/>
+    <p class="p-web">
+        CSS Service:
+We design websites from scratch and customize existing designs to match the client’s needs and preferences.
+    </p>
+</div>
+<div class="ico">
+    <img src="js.jpg" alt="JavaScript Service" class="web"/>
+    <p class="p-web">
+        JavaScript Service:
+We create custom functions to add interactivity to HTML elements based on the client’s requirements.
+    </p>
+</div>
+<div class="ico">
+<img src="Remote education.jpg" alt="Remote education" class="web"/>
+<p class="p-web">
+    Remote Web Training:
+We train clients remotely to design websites and web applications, with a focus on front-end development.
+</p>
+</div>
+<!--خدمة جديدة-->
+<div class="ico">
+<img src="python.jpg" alt="python service" class="web"/>
+<p class="p-web">
+    Python Service:
+We provide backend development solutions and fix logical or structural issues in Python code based on client needs.
+</p>
+</div>
+</div>
+    </section>
+    <section id="pro">
+        <div class="ttitle">
+<h1 id="ti3" class="ti" onclick="spi()" onmouseover="changing()" onmouseout="ree()">
+    Projects
+</h1></div>
+<div id="progect">
+<div class="Cards">
+    <img src="sportPractees.jpg" class="pro"/>
+    <p class="p-web">
+        <h1 class="con12">
+            sport practice
+        </h1>
+        <p class="con12">
+            “Fitness app with a running timer and push-up counter.”
+        </p>
+        <a href="https://github.com/Fouadddiv/sportPractise/releases/download/v1.0.0/sportPractise.zip" class="con12">
+            <input type="button"
+            value="Download" class="b12">
+        </a>
+    </p>
+</div>
+<div class="Cards">
+    <img src="stor.jpg" alt="صورة لمتجر اليكتروني" class="pro"/>
+    <p class="p-web">
+        <h1 class="con12">test stor </h1>
+        <p class="con12">
+            This is a prototype of an online store
+         </p>
+        <a href="https://test-store-nx2h.onrender.com" class="con12">
+<input type="button"
+value="More details" class="b12">
+        </a>
+    </p>
+</div>
+<!--مشروع لعبة الصيارات-->
+<div class="Cards">
+    <img src="legend_rasing.jpg" alt="legend_rasing" class="pro"/>
+    <p class="p-web">
+        <h1 class="con12">
+          legend_rasing project 
+        </h1>
+        <p class="con12">
+        Racing Game:
+A lightweight and fun web-based car racing game—easy to play and enjoyable to try.
+     </p>
+        <a href="https://fouadddiv.github.io/Racing-legend/rasing.html" class="con12">
+            <input type="button"
+            value="More details" class="b12">
+        </a>
+    </p>
+</div>
+
+<!--مشروع بايثون-->
+<div class="Cards">
+    <img src="pythonPro.jpg" alt="The qrCode program is open and displays the qrCode image of the website" class="pro"/>
+    <p class="p-web">
+        <h1 class="con12">
+            QR_CODE
+        </h1>
+        <p class="con12">
+            This is a qrCode application that creates qr images for any text or links
+         </p>
+        <a href="https://github.com/Fouadddiv/QrCode/archive/refs/tags/v0.1.2.zip" class="con12">
+            <input type="button"
+            value="Download from here" class="b12">
+        </a>
+    </p>
+</div>
+<div class="Cards">
+    <img src="jspro.jpg" class="pro" id="js"/>
+    <p class="p-web">
+        <h1 class="con12">LOGIN PROJECT</h1>
+        <p class="con12">
+         this a small JS project </p>
+         <a href="https://fouadddiv.github.io/login-page/indexe.html" class="con12">
+            <input type="button"
+            value="More details" class="b12">
+         </a>
+    </p>
+</div>
+<div class="Cards">
+    <img src="cours.jpg" class="pro"/>
+    <p class="p-web">
+        <h1 class="con12">
+            Lectures and applications project 
+        </h1>
+        <p class="con12">
+            This is a simulation project for the college's website, advanced
+        </p>
+        <a href="https://fouadddiv.github.io/Lectures-and-applications/index.html" class="con12">
+            <input type="button"
+            value="More details" class="b12">
+        </a>
+    </p>
+</div>
+<div class="Cards">
+    <img src="calculatrees.jpg" class="pro"/>
+    <p class="p-web">
+        <h1 class="con12">
+            CALCULATOR  PROJECT
+        </h1>
+        <p class="con12">
+        This small CALCULATOR project </p>
+        <a href="https://fouadddiv.github.io/Calculator/index.html" class="con12">
+            <input type="button"
+            value="More details" class="b12">
+        </a>
+    </p>
+</div>
+<div class="Cards">
+    <img src="BMI.jpg" class="pro"/>
+    <p class="p-web">
+        <h1 class="con12">
+            B M IPROJECT
+        </h1>
+        <p class="con12">
+            This is a BM I computer for the body mass index
+        </p>
+        <a href="https://fouadddiv.github.io/B-M-I/B-M-I.html" class="con12">
+            <input type="button"
+            value="More details" class="b12">
+        </a>
+    </p>
+</div>
+<div class="Cards">
+    <img src="X_O.jpg" class="pro"/>
+    <p class="p-web">
+        <h1 class="con12">
+            X_O-game
+        </h1>
+        <p class="con12">
+           This is the famous x_o game of my design 
+        </p>
+        <a href="https://fouadddiv.github.io/X_O-game/index.html" class="con12">
+            <input type="button"
+            value="More details" class="b12">
+        </a>
+    </p>
+</div>
+
+<div class="Cards">
+    <img src="my chanel.jpg" class="pro"/>
+    <p class="p-web">
+        <h1 class="con12">MY CHANNEL PROJECT</h1>
+        <p class="con12">
+         this a small css project </p>
+         <a href="https://fouadddiv.github.io/MY-CHANNEL/indexe.html" class="con12">
+            <input type="button"
+            value="More details" class="b12">
+         </a>
+    </p>
+</div>
+
+
+</div>
+    </section>
+    <section id="con" class="main2">
+    <div class="ttitle" id="tic">
+        <h1 class="ti2" id="contacT">
+contact
+        </h1>
+        <h2 id="ti04">
+            You can contact us through the following ways
+        </h2>
+    </div>
+        
+<div id="mcj1">
+    <div class="mc">
+        <h3>
+            phone number
+        </h3>
+        <img src="Phone.jpg" class="web"/>
+        <p class="p-web">
+            +213-95-76-11-73
+        </p>
+    </div>
+    <div class="mc">
+<h3>
+    My Email
+</h3>
+<img src="Email.jpg" class="web"/>
+<p class="p-web">
+    boukafouad4@gmail.com
+</p>
+    </div>
+</div>
+</section>
+<footer id="mi">
+    <h3 id="info">
+        This site was developed by Fouad Boukhtouta
+    </h3>
+</footer>
+<nav id="navMobile">
+
+</nav>
+</body>
+</html>

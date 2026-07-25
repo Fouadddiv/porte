@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Generate PWA Icons</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #1a1a2e;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2em;
+        }
+        h1 { color: gold; margin-bottom: 1em; }
+        canvas { border: 2px solid gold; margin: 1em; }
+        .btn {
+            background: gold;
+            color: #000080;
+            border: none;
+            padding: 1em 2em;
+            font-size: 1em;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 0.5em;
+        }
+        .btn:hover { background: white; }
+        #status { margin-top: 1em; color: #0f0; }
+    </style>
+</head>
+<body>
+    <h1>PWA Icon Generator</h1>
+    <p>Click the button to generate and download icons for your PWA</p>
+    
+    <canvas id="canvas192" width="192" height="192"></canvas>
+    <canvas id="canvas512" width="512" height="512"></canvas>
+    
+    <div>
+        <button class="btn" onclick="downloadIcon('canvas192', 'icon-192x192.png')">
+            Download 192x192
+        </button>
+        <button class="btn" onclick="downloadIcon('canvas512', 'icon-512x512.png')">
+            Download 512x512
+        </button>
+        <button class="btn" onclick="downloadAll()">
+            Download All
+        </button>
+    </div>
+    
+    <div id="status"></div>
+
+    <script>
+        function drawIcon(canvasId, size) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+            
+            // Background
+            ctx.fillStyle = '#000080';
+            ctx.beginPath();
+            ctx.arc(size/2, size/2, size/2, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Border
+            ctx.strokeStyle = 'gold';
+            ctx.lineWidth = size * 0.04;
+            ctx.beginPath();
+            ctx.arc(size/2, size/2, size/2 - size*0.02, 0, Math.PI * 2);
+            ctx.stroke();
+            
+            // Letter F
+            ctx.fillStyle = 'gold';
+            ctx.font = `bold ${size*0.5}px Arial`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('F', size/2, size/2);
+            
+            // Subtitle
+            ctx.fillStyle = 'white';
+            ctx.font = `bold ${size*0.07}px Arial`;
+            ctx.fillText('FOUAD', size/2, size*0.78);
+        }
+        
+        function downloadIcon(canvasId, filename) {
+            const canvas = document.getElementById(canvasId);
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+            document.getElementById('status').textContent = `Downloaded: ${filename} - Place it in the icons/ folder`;
+        }
+        
+        function downloadAll() {
+            downloadIcon('canvas192', 'icon-192x192.png');
+            setTimeout(() => downloadIcon('canvas512', 'icon-512x512.png'), 500);
+        }
+        
+        drawIcon('canvas192', 192);
+        drawIcon('canvas512', 512);
+    </script>
+</body>
+</html>

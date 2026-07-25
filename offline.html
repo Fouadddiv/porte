@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline - Fouad Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #000080;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 2em;
+        }
+        .offline-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 3px solid gold;
+            border-radius: 15px;
+            padding: 3em 2em;
+            max-width: 400px;
+            width: 100%;
+        }
+        .offline-icon {
+            font-size: 4em;
+            margin-bottom: 1em;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.95); }
+        }
+        h1 {
+            color: gold;
+            font-size: 1.8em;
+            margin-bottom: 0.8em;
+            text-transform: uppercase;
+        }
+        p {
+            font-size: 1em;
+            line-height: 1.6;
+            margin-bottom: 1.5em;
+            color: #ccc;
+        }
+        .retry-btn {
+            background-color: gold;
+            color: #000080;
+            border: none;
+            padding: 0.8em 2em;
+            font-size: 1em;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .retry-btn:hover {
+            background-color: white;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-container">
+        <div class="offline-icon">📡</div>
+        <h1>You're Offline</h1>
+        <p>
+            It looks like you've lost your internet connection.
+            <br><br>
+            Don't worry — some content is still available from the cache.
+            <br><br>
+            Please check your connection and try again.
+        </p>
+        <button class="retry-btn" onclick="window.location.reload()">
+            Try Again
+        </button>
+    </div>
+</body>
+</html>
