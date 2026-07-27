@@ -741,3 +741,36 @@ gap: 30px;
   transform: translateY(-3px); /* رفع الزر قليلاً للأعلى */
   box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4); /* إضافة ظل خفيف */
 }
+/* Nav Sidebar State - PWA Install */
+@media (max-width: 768px) {
+  #navMobile.nav-sidebar {
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    min-height: 100vh;
+    left: 0;
+    top: 0;
+    bottom: auto;
+    right: auto;
+    padding: 1em 0.3em;
+    justify-content: flex-start;
+  }
+  #navMobile.nav-sidebar .mqa {
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-start;
+    gap: 0.5em;
+  }
+  #navMobile.nav-sidebar .nvb {
+    width: 3em;
+    height: 3em;
+  }
+}
+@media (max-width: 425px) {
+  #navMobile.nav-sidebar .mqa {
+    grid-template-columns: none;
+  }
+}

@@ -110,40 +110,92 @@ clearActive();
     });
 });
 
-// PWA Install Prompt - Alert Window
+// PWA Install Prompt
 let deferredPrompt = null;
 
-window.addEventListener('beforeinstallprompt', (e) => {
-  console.log('beforeinstallprompt fired!');
-  e.preventDefault();
-  deferredPrompt = e;
-
-  setTimeout(() => {
-    if (!deferredPrompt) return;
-
-    const userWantsToInstall = confirm(
-      "Install Fouad Portfolio\n\n" +
-      "This app can be installed on your device for quick access and offline use.\n\n" +
-      "Would you like to install it now?"
-    );
-
-    if (userWantsToInstall) {
+function activateSidebarMode() {
+  var nav = document.getElementById('navMobile');
+  if (!nav || nav.classList.contains('nav-sidebar')) return;
+  var ul = nav.querySelector('ul.mqa');
+  if (ul && !document.getElementById('installBtn')) {
+    var li = document.createElement('li');
+    var btn = document.createElement('button');
+    btn.id = 'installBtn';
+    btn.className = 'nvb';
+    btn.textContent = 'Install App';
+    btn.setAttribute('aria-label', 'Install Fouad Portfolio');
+    li.appendChild(btn);
+    ul.appendChild(li);
+    btn.addEventListener('click', function () {
+      if (!deferredPrompt) return;
       deferredPrompt.prompt();
-      deferredPrompt.userChoice.then((choiceResult) => {
+      deferredPrompt.userChoice.then(function (choiceResult) {
         if (choiceResult.outcome === 'accepted') {
           console.log('User accepted the install prompt');
         } else {
           console.log('User dismissed the install prompt');
         }
         deferredPrompt = null;
+        deactivateSidebarMode();
       });
-    } else {
-      deferredPrompt = null;
-    }
-  }, 3000);
+    });
+  }
+  nav.classList.add('nav-sidebar');
+  document.body.classList.add('sidebar-active');
+}
+
+function deactivateSidebarMode() {
+  var nav = document.getElementById('navMobile');
+  if (nav) nav.classList.remove('nav-sidebar');
+  document.body.classList.remove('sidebar-active');
+  var btn = document.getElementById('installBtn');
+  if (btn) {
+    var li = btn.closest('li');
+    if (li) li.remove();
+    else btn.remove();
+  }
+}
+
+window.addEventListener('beforeinstallprompt', function (e) {
+  console.log('beforeinstallprompt fired!');
+  e.preventDefault();
+  deferredPrompt = e;
+
+  if (window.innerWidth <= 768) {
+    activateSidebarMode();
+  } else {
+    setTimeout(function () {
+      if (!deferredPrompt) return;
+      var userWantsToInstall = confirm(
+        "Install Fouad Portfolio\n\n" +
+        "This app can be installed on your device for quick access and offline use.\n\n" +
+        "Would you like to install it now?"
+      );
+      if (userWantsToInstall) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then(function (choiceResult) {
+          if (choiceResult.outcome === 'accepted') {
+            console.log('User accepted the install prompt');
+          } else {
+            console.log('User dismissed the install prompt');
+          }
+          deferredPrompt = null;
+        });
+      } else {
+        deferredPrompt = null;
+      }
+    }, 3000);
+  }
 });
 
-window.addEventListener('appinstalled', () => {
+window.addEventListener('appinstalled', function () {
   console.log('Fouad Portfolio was installed!');
   deferredPrompt = null;
+  deactivateSidebarMode();
+});
+
+window.addEventListener('resize', function () {
+  if (window.innerWidth > 768 && deferredPrompt) {
+    deactivateSidebarMode();
+  }
 });

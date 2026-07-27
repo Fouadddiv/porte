@@ -1,4 +1,4 @@
-const CACHE_NAME = 'fouad-portfolio-v2';
+const CACHE_NAME = 'fouad-portfolio-v4';
 const ASSETS_TO_CACHE = [
   './index.html',
   './style.css',
