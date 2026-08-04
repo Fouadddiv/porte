@@ -122,8 +122,8 @@ function activateSidebarMode() {
     var btn = document.createElement('button');
     btn.id = 'installBtn';
     btn.className = 'nvb';
-    btn.textContent = 'Install App';
-    btn.setAttribute('aria-label', 'Install Fouad Portfolio');
+    btn.textContent = 'INSTALL APP';
+    btn.setAttribute('aria-label', 'INSTALL APP');
     li.appendChild(btn);
     ul.appendChild(li);
     btn.addEventListener('click', function () {

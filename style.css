@@ -55,6 +55,7 @@ span {
 
 #logo {
   animation: spin 6s linear infinite;
+  will-change: transform;
 }
 a {
   text-decoration: none;
@@ -164,14 +165,27 @@ section {
 }
 
 .cont {
-  max-width: 12em;
+  max-width: 15em;
+  display: flex;
+  align-self: center;
+  flex-direction: row;
+  flex-wrap: wrap;
   letter-spacing: 0.05em;
-  line-height: 1.3;
+  font-size: 1.2em;
+  line-height: 0.85;
   text-transform: uppercase;
-  text-align: justify;
-  margin-bottom: 2em;
+  text-align: center;
+  margin-bottom: 1.2em;
 }
-
+.cont::first-line{
+  color: rgb(0, 191, 255);
+}
+.cont span{
+  color: rgb(0, 200, 255);
+  text-shadow:
+        0 0 2px #000,
+        0 0 4px rgba(0,0,0,0.7);
+}
 #mb {
   width: fit-content;
   height: 5em;
@@ -326,18 +340,29 @@ section {
 .Cards >.p-web{
 display: flex;
 flex-direction: column;
+background-color: transparent;
 justify-content: space-between;
 }
 .pro {
   max-width:100%;
   height: auto;
-  margin: 0%;
+  margin-bottom: 0.4em;
 }
 .con12{
+  background-color: black;
+  color: rgb(0, 200, 255);
   justify-self: center;
   text-transform: uppercase;
+  margin-bottom: 0.3em;
+}
+.Cards a{
+  background-color: transparent;
+}
+.p-web p{
+  height: 8em;
 }
 .b12{
+  width: 4em;
   background-color: darkblue;
   color: white;
   display: flex;
@@ -421,7 +446,7 @@ footer{
   flex-direction: row;
   place-content: center;
 }
-/* إخفاء زر القائمة الجانبية في الشاشات الكبيرة */
+/* إخفاء شريط التنقل السفلي في الشاشات الكبيرة */
 @media (min-width: 769px) {
   #navMobile{
     display: none !important;
@@ -693,12 +718,6 @@ gap: 30px;
   }
 
   /* ضبط المشاريع */
-  .progect {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
   .Cards {
     width: 90%;
     max-width: 20em;
@@ -726,13 +745,6 @@ gap: 30px;
     align-items: center;
     justify-content: center;
   }
-
-  .contact-item {
-    width: 90%;
-    max-width: 18em;
-    padding: 0.7em;
-    border-radius: 5px;
-  }
 }
 .button-active{
     background-color: gold; /* تغيير اللون للذهبي */
@@ -742,35 +754,112 @@ gap: 30px;
   box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4); /* إضافة ظل خفيف */
 }
 /* Nav Sidebar State - PWA Install */
+/* كل تنسيقات وضع الشريط الجانبي تعتمد على الكلاس الرئيسي .sidebar-active فقط */
 @media (max-width: 768px) {
-  #navMobile.nav-sidebar {
+  /* الأقسام تبقى بعرض كامل (خلفيتها تمر تحت الشريط الشفاف)،
+     والمحتوى الداخلي فقط يُزاح ليتجنب تداخل الشريط الجانبي.
+     !important لتجاوز Specificity أي محدد ID على الأقسام مثل #con */
+  .sidebar-active section,
+  .sidebar-active footer {
+    padding-left: 4em !important;
+  }
+
+  .sidebar-active #navMobile {
     flex-direction: column;
     width: auto;
     height: auto;
+    background-color: transparent;
     min-height: 100vh;
     left: 0;
     top: 0;
     bottom: auto;
     right: auto;
     padding: 1em 0.3em;
-    justify-content: flex-start;
+    justify-content: space-between;
   }
-  #navMobile.nav-sidebar .mqa {
+
+  .sidebar-active #navMobile .mqa {
     flex-direction: column;
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
     margin: 0;
     padding: 0;
-    justify-content: flex-start;
     gap: 0.5em;
   }
-  #navMobile.nav-sidebar .nvb {
-    width: 3em;
-    height: 3em;
+
+  .sidebar-active #navMobile .nvb {
+    width: 2.5em;
+    height: 2.5em;
+  }
+
+  /* زر التثبيت: خلفية سوداء ونص نيون أزرق عند التحويم والتركيز */
+  .sidebar-active #installBtn {
+    background-color: black;
+    color: white;
+  }
+  .sidebar-active #installBtn:hover,
+  .sidebar-active #installBtn:focus {
+    color: #00d9ff;
+  }
+
+  /* الشعار يبقى ظاهراً ويبدأ بعد الشريط الجانبي ويلتف داخل المساحة المتاحة */
+  .sidebar-active #logo12 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent !important;
+    justify-self: start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 4em;
+    max-width: calc(100% - 4em);
+  }
+
+  /* تصغير النصوص والبطاقات بالقدر اللازم فقط */
+  .sidebar-active .cont {
+    font-size: 0.95em;
+    max-width: 70%;
+  }
+
+  .sidebar-active .Cards {
+    max-width: 18em;
+  }
+
+  .sidebar-active .ico {
+    width: 80%;
+  }
+
+  .sidebar-active .mc {
+    width: 85%;
+    max-width: 16em;
+  }
+
+  .sidebar-active #mcj,
+  .sidebar-active #progect,
+  .sidebar-active #mcj1 {
+    width: 100%;
   }
 }
 @media (max-width: 425px) {
-  #navMobile.nav-sidebar .mqa {
-    grid-template-columns: none;
+  .sidebar-active #navMobile .mqa {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+  }
+  .sidebar-active #navMobile .nvb {
+    width: 3.5em;
+    height: 3.5em;
+    margin-bottom: 1.5em;
+  }
+  .sidebar-active section,
+  .sidebar-active footer {
+    padding-left: 4.75em !important;
+  }
+  .sidebar-active #logo12 {
+    margin-left: 4.75em;
+    max-width: calc(100% - 4.75em);
   }
 }
