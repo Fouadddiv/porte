@@ -789,8 +789,8 @@ gap: 30px;
   }
 
   .sidebar-active #navMobile .nvb {
-    width: 4em;
-    height: 4em;
+    width: 3em;
+    height: 3em;
   }
 .sidebar-active #navMobile .nvb:first-child{
   margin-top: 1em;
