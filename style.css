@@ -15,7 +15,8 @@ body {
 
 /* تنسيق header */
 header {
-  background-color: darkblue;
+  background-color: rgba(0, 0, 100, 0.3);
+  ;
   color: rgb(254, 254, 235);
   width: 100%;
   top: 0;
@@ -100,13 +101,6 @@ header nav li {
 }
 
 /* 4. تأثير عند مرور الماوس (Hover) */
-.nvb:hover {
-cursor: pointer;
-  color: black; /* النص يصبح أسود */
-  border-color: gold;
-  transform: translateY(-3px); /* رفع الزر قليلاً للأعلى */
-  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4); /* إضافة ظل خفيف */
-}
 /*ضبط الصور داخل الأزرار*/
 .bimg{
   width: 100%;
@@ -121,16 +115,7 @@ cursor: pointer;
   
   object-fit: cover;
 }
-/* 5. تأثير الزر النشط (Active/Focus) كما طلبت في الكود الأصلي لكن بشكل محسن */
-#hp1:focus, #srv1:focus, #pro1:focus, #con01:focus{
-  background-color: transparent;
-  color: gold;
-  border: 2px solid gold; /* تقليل سمك الحدود ليكون أنيقاً */
-  
-  width: 4em; /* تصغير العرض عند التحول لدائرة */
-  height: 4em;
-  transform: scale(1.1); /* تكبير بسيط */
-}
+/* 5. تأثير الزر النشط (Active/Focus) تم حذفه */
 
 /* تنسيق الأقسام الرئيسية */
 section {
@@ -406,7 +391,11 @@ justify-content: space-between;
   padding: 3em 5%;
   
 }
+a{
+  text-decoration: none;
 
+
+}
 #mcj1 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -459,10 +448,7 @@ footer{
   }
 }
 /*اخفاء header من الشاشات الصغيرة*/
-
   
- 
-
 @media (max-width: 768px) {
 
     #navMobile{
@@ -472,9 +458,9 @@ footer{
         justify-content: center; /* يبدأ الترتيب من الأعلى */
         align-items: center;
         
-        background-color: darkblue; /* نفس لون الـ Header */
+        background-color: rgba(0, 0, 100, 0.35); /* نفس لون الـ Header */
         width: 100vw;
-        height: 5vh; /* ملء ارتفاع الشاشة */
+        height: 5.5vh; /* ملء ارتفاع الشاشة */
         
         position: fixed;
         bottom: 0;
@@ -620,7 +606,7 @@ footer{
         align-items: center;
         justify-content: space-between; /* يبدأ الترتيب من الأعلى */
         
-        background-color: darkblue; /* نفس لون الـ Header */
+        background-color: rgba(0, 0, 100, 0.35); /* نفس لون الـ Header */
         width: 100vw;
         height: 15vh; /* ملء ارتفاع الشاشة */
         
